@@ -1,0 +1,2 @@
+class FlowsheetsController < ApplicationController
+end
