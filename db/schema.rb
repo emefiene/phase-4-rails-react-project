@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_09_170806) do
+ActiveRecord::Schema.define(version: 2023_05_11_221215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
     t.string "time"
-    t.bigint "patients_id", null: false
-    t.bigint "physicians_id", null: false
+    t.bigint "patient_id", null: false
+    t.bigint "physician_id", null: false
     t.boolean "patient_flowsheet_complete"
     t.boolean "appointment_complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["patients_id"], name: "index_appointments_on_patients_id"
-    t.index ["physicians_id"], name: "index_appointments_on_physicians_id"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
+    t.index ["physician_id"], name: "index_appointments_on_physician_id"
   end
 
   create_table "flowsheets", force: :cascade do |t|
@@ -39,17 +39,17 @@ ActiveRecord::Schema.define(version: 2023_05_09_170806) do
     t.integer "weight"
     t.integer "bmi"
     t.string "doctor_notes"
-    t.bigint "appointments_id", null: false
+    t.bigint "appointment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["appointments_id"], name: "index_flowsheets_on_appointments_id"
+    t.index ["appointment_id"], name: "index_flowsheets_on_appointment_id"
   end
 
   create_table "patients", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "img_url"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "date_of_birth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2023_05_09_170806) do
   create_table "physicians", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "img_url"
     t.string "bio"
     t.string "city"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2023_05_09_170806) do
     t.index ["role_type", "role_id"], name: "index_users_on_role_type_and_role_id"
   end
 
-  add_foreign_key "appointments", "patients", column: "patients_id"
-  add_foreign_key "appointments", "physicians", column: "physicians_id"
-  add_foreign_key "flowsheets", "appointments", column: "appointments_id"
+  add_foreign_key "appointments", "patients"
+  add_foreign_key "appointments", "physicians"
+  add_foreign_key "flowsheets", "appointments"
 end

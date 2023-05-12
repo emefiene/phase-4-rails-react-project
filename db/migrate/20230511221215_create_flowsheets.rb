@@ -12,7 +12,7 @@ class CreateFlowsheets < ActiveRecord::Migration[6.1]
       t.integer :weight
       t.integer :bmi
       t.string :doctor_notes
-      t.belongs_to :appointments, null: false, foreign_key: true
+      t.belongs_to :appointment, null: false, foreign_key: true
 
       t.timestamps
     end

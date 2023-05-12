@@ -1,3 +1,4 @@
 class Flowsheet < ApplicationRecord
-  belongs_to :appointments
+  belongs_to :appointment
+  
 end

@@ -3,7 +3,7 @@ class CreatePhysicians < ActiveRecord::Migration[6.1]
     create_table :physicians do |t|
       t.string :first_name
       t.string :last_name
-      t.integer :phone_number
+      t.string :phone_number
       t.string :img_url
       t.string :bio
       t.string :city
