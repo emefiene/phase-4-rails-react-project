@@ -1,5 +1,5 @@
 {
-  "name": "react-rails-api-project-template-client",
+  "name": "medical-app",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3000",
@@ -7,6 +7,7 @@
     "node": "16.x"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -15,6 +16,7 @@
     "react": "^17.0.2",
     "react-devtools": "^2.1.7",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "^5.0.1",
     "styled-components": "^6.0.0-rc.1",

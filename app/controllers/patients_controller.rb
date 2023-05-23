@@ -6,7 +6,7 @@ class PatientsController < ApplicationController
     end
 
     def create 
- 
+  
       @patient = Patient.create(patient_params)
       render json: @patient
     end
@@ -15,7 +15,8 @@ class PatientsController < ApplicationController
     private
 
     def patient_params 
-       params.permit(:first_name, :last_name, :img_url, :phone_number, :date_of_birth)
+       params.require(:patient).permit( :first_name, :last_name, :img_url, :phone_number, :date_of_birth )
+      #  params.permit(:first_name, :last_name, :img_url, :phone_number, :date_of_birth)
     end
 end
 

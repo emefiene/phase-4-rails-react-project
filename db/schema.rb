@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2023_05_11_221215) do
     t.string "img_url"
     t.string "bio"
     t.string "city"
-    t.string "speciaty"
+    t.string "specialty"
     t.integer "years_of_experience"
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false

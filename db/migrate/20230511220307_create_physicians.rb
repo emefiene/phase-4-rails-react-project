@@ -7,7 +7,7 @@ class CreatePhysicians < ActiveRecord::Migration[6.1]
       t.string :img_url
       t.string :bio
       t.string :city
-      t.string :speciaty
+      t.string :specialty
       t.integer :years_of_experience
       t.float :rating
 
