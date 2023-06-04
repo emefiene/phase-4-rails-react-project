@@ -182,18 +182,18 @@ pt9 = Patient.create(
     date_of_birth: "03/15/1990"
 )
 
-aa = Appointment.create(physician:p1, patient:pt1, time: "08/12/2021 10:00", patient_flowsheet_complete: true, appointment_complete: false)
-ab = Appointment.create(physician:p2, patient:pt2, time: "08/12/2021 10:00", patient_flowsheet_complete: false, appointment_complete: true)
-ac = Appointment.create(physician:p3, patient:pt3, time: "08/12/2021 09:00", patient_flowsheet_complete: true, appointment_complete: false)
-ad = Appointment.create(physician:p4, patient:pt4, time: "08/12/2021 08:00", patient_flowsheet_complete: false, appointment_complete: true)
-ae = Appointment.create(physician:p5, patient:pt5,time: "08/12/2021 10:30", patient_flowsheet_complete: true, appointment_complete: false)
-af = Appointment.create(physician:p6, patient:pt6,time: "08/12/2021 00:00", patient_flowsheet_complete: false, appointment_complete: true)
-ag = Appointment.create(physician:p7, patient:pt7,time: "08/12/2021 10:00", patient_flowsheet_complete: true, appointment_complete: false)
-ah = Appointment.create(physician:p8, patient:pt8,time: "08/12/2021 09:20", patient_flowsheet_complete: true, appointment_complete: true)
-ai = Appointment.create(physician:p1, patient:pt9,time: "08/12/2021 13:00", patient_flowsheet_complete: false, appointment_complete: true)
-aj = Appointment.create(physician:p2, patient:pt1,time: "08/12/2021 14:20", patient_flowsheet_complete: true, appointment_complete: false)
-ak = Appointment.create(physician:p3, patient:pt2,time: "08/12/2021 15:00", patient_flowsheet_complete: false, appointment_complete: false)
-al = Appointment.create(physician:p4, patient:pt3,time: "08/12/2021 14:45", patient_flowsheet_complete: true, appointment_complete: true)
+# aa = Appointment.create(physician:p1, patient:pt1, time: "08/12/2021 10:00", patient_flowsheet_complete: true, appointment_complete: false)
+# ab = Appointment.create(physician:p2, patient:pt2, time: "08/12/2021 10:00", patient_flowsheet_complete: false, appointment_complete: true)
+# ac = Appointment.create(physician:p3, patient:pt3, time: "08/12/2021 09:00", patient_flowsheet_complete: true, appointment_complete: false)
+# ad = Appointment.create(physician:p4, patient:pt4, time: "08/12/2021 08:00", patient_flowsheet_complete: false, appointment_complete: true)
+# ae = Appointment.create(physician:p5, patient:pt5,time: "08/12/2021 10:30", patient_flowsheet_complete: true, appointment_complete: false)
+# af = Appointment.create(physician:p6, patient:pt6,time: "08/12/2021 00:00", patient_flowsheet_complete: false, appointment_complete: true)
+# ag = Appointment.create(physician:p7, patient:pt7,time: "08/12/2021 10:00", patient_flowsheet_complete: true, appointment_complete: false)
+# ah = Appointment.create(physician:p8, patient:pt8,time: "08/12/2021 09:20", patient_flowsheet_complete: true, appointment_complete: true)
+# ai = Appointment.create(physician:p1, patient:pt9,time: "08/12/2021 13:00", patient_flowsheet_complete: false, appointment_complete: true)
+# aj = Appointment.create(physician:p2, patient:pt1,time: "08/12/2021 14:20", patient_flowsheet_complete: true, appointment_complete: false)
+# ak = Appointment.create(physician:p3, patient:pt2,time: "08/12/2021 15:00", patient_flowsheet_complete: false, appointment_complete: false)
+# al = Appointment.create(physician:p4, patient:pt3,time: "08/12/2021 14:45", patient_flowsheet_complete: true, appointment_complete: true)
 
 
 
@@ -219,184 +219,184 @@ u16 = User.create( username: "ptman8", password: '1234' , role_id: pt9.id, role_
 
 
 
- fa = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+#  fa = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fb = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fb = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fc = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fc = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fd = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fd = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fe = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fe = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-ff = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# ff = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fg = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fg = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fh = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fh = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fi = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fi = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fj = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fj = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fk = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fk = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
-fl = Flowsheet.create(
-    appointment:aa,
-    location: "My chest",
-    duration: "Half a day",
-    Blood_pressure: nil,
-    bmi: nil,
-    weight: nil,
-    height: nil,
-    temperature: nil,
-    pulse: nil,
-    oxygen_saturation: nil,
-    doctor_notes: nil,
-    reason_for_visit: "Chest pains"
-)
+# fl = Flowsheet.create(
+#     appointment:aa,
+#     location: "My chest",
+#     duration: "Half a day",
+#     Blood_pressure: nil,
+#     bmi: nil,
+#     weight: nil,
+#     height: nil,
+#     temperature: nil,
+#     pulse: nil,
+#     oxygen_saturation: nil,
+#     doctor_notes: nil,
+#     reason_for_visit: "Chest pains"
+# )
 
 

@@ -15,4 +15,13 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
+  get 'users/:id/my_appointments', to: 'users#upcoming_appointments'
+
+  get 'users/:id/appointments_complete', to: 'users#completed_appointments'
+
+  get 'users/:id/your_physician', to: 'users#your_physicians'
+  
+  get 'users/:id/your_patients', to: 'users#your_patients'
+
 end
+

@@ -29,7 +29,10 @@ const Navbar = ({setCurrentUser}) => {
       <ul>
       <li onClick={() => setMenu(!menu)}>x</li>
     <li><Link to="/"><h2>Home</h2></Link></li>
+    <li><Link to="/appointment_new"><h4>Schedule Appointment</h4></Link></li>
     <li><Link to="/footer"><h2>Footer</h2></Link></li>
+    <li><Link to="/flowsheet"><h4>Complete Flowsheet</h4></Link></li>
+    <li><Link to="/appointments"><h4>Your Appointment</h4></Link></li>
     </ul>
   }
   </Menu>

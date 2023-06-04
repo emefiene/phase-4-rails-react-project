@@ -4,6 +4,9 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PhysiciansContainer from "./PhysiciansContainer"
 import Login from "./Login";
+import AppointmentForm from "./AppointmentForm";
+import Flowsheet from "./Flowsheet";
+import PatAptContainer from "./PatAptContainer";
 
 
 function App() {
@@ -12,6 +15,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [userList, setUserList] = useState([])
   const [patientData, setPatientData] = useState([])
+  const [appointmentData, setAppointmentData] = useState([])
 
   useEffect(() => {
     async function fetchPhysiciansData() {
@@ -39,7 +43,7 @@ function App() {
         res.json()
         .then((user) => {
           updateUser(user);
-          
+          console.log("current", user)
         });
       }
     })
@@ -64,7 +68,18 @@ function App() {
     
   }, [])
 
-  const addUser = (data) => setUserList(current => [data, ...current])
+  useEffect(() => {
+    fetch("/appointments")
+    .then(res => res.json())
+    .then(data => {
+      setAppointmentData(data)
+      
+    
+    })
+    
+  }, [])
+
+  const addAppointment = (data) => setAppointmentData(current => [data, ...current])
   
   const updateUser = (user) => setCurrentUser(user)
   
@@ -75,6 +90,9 @@ function App() {
       <Navbar setCurrentUser={setCurrentUser} />
       <Routes>
       <Route path="/" element={ < PhysiciansContainer physicianData={physicianData} /> } />
+      <Route path="/appointment_new" element={ <AppointmentForm currentUser={currentUser} addAppointment={addAppointment} /> } />
+      <Route path="/appointments/flowsheet/:id" element={ < Flowsheet currentUser={currentUser} /> } />
+      <Route path="/appointments" element={ < PatAptContainer  currentUser={currentUser} /> } />
       <Route path="/footer" element={ <Footer/> } />
       
       </Routes>

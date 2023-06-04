@@ -10,6 +10,11 @@ class PhysiciansController < ApplicationController
       render json: @physician
     end
 
+    def show
+      physician = Physician.find(params[:id])
+      render json: physician
+    end
+
 
     private
 
