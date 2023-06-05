@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
-const Navbar = ({setCurrentUser}) => {
+const Navbar = ({setCurrentUser, currentUser}) => {
   const [menu, setMenu] = useState(true)
 
   const handleLogOut = () => {
@@ -28,11 +28,31 @@ const Navbar = ({setCurrentUser}) => {
       </div>:
       <ul>
       <li onClick={() => setMenu(!menu)}>x</li>
-    <li><Link to="/"><h2>Home</h2></Link></li>
-    <li><Link to="/appointment_new"><h4>Schedule Appointment</h4></Link></li>
-    <li><Link to="/footer"><h2>Footer</h2></Link></li>
-    <li><Link to="/flowsheet"><h4>Complete Flowsheet</h4></Link></li>
-    <li><Link to="/appointments"><h4>Your Appointment</h4></Link></li>
+    {currentUser.role_type == "Patient"?(
+      <div>
+      <li><Link to="/"><h2>Home</h2></Link></li>
+      <li><Link to="/appointment_new"><h4>Schedule Appointment</h4></Link></li>
+      <li><Link to="/footer"><h2>Footer</h2></Link></li>
+      <li><Link to="/flowsheet"><h4>Complete Flowsheet</h4></Link></li>
+      <li><Link to="/appointments"><h4>Your Appointment</h4></Link></li>
+      <li><Link to="/appointment_complete"><h4> Appointment Complete </h4></Link></li>
+      <li><Link to="/my_physicians"><h4> My Physicians </h4></Link></li>
+      <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
+      </div>
+    ):(
+      <div>
+      <li><Link to="/"><h2>Home</h2></Link></li>
+      <li><Link to="/appointment_new"><h4>Schedule Appointment</h4></Link></li>
+      <li><Link to="/footer"><h2>Footer</h2></Link></li>
+      <li><Link to="/flowsheet"><h4>Complete Flowsheet</h4></Link></li>
+      <li><Link to="/appointments"><h4>Your Appointment</h4></Link></li>
+      <li><Link to="/appointment_complete"><h4> Appointment Complete </h4></Link></li>
+      <li><Link to="/my_patients"><h4> My Patients </h4></Link></li>
+      <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
+      </div>
+    )}
+    
+    
     </ul>
   }
   </Menu>

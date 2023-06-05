@@ -4,8 +4,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
 const AppointmentForm = ({currentUser,addAppointment}) => {
-    // console.log(currentUser)
-     
+    
     const [formData, setFormData] = useState({
         time:"",
         physician_id:""
@@ -40,7 +39,7 @@ const AppointmentForm = ({currentUser,addAppointment}) => {
               res.json()
             .then(data => {
             console.log(data)
-            // addAppointment(data)
+            addAppointment(data)
             console.log("Appointment created successfully!")
             })
             //   history.push(`/productions/${id}`)

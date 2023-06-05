@@ -7,6 +7,11 @@ import Login from "./Login";
 import AppointmentForm from "./AppointmentForm";
 import Flowsheet from "./Flowsheet";
 import PatAptContainer from "./PatAptContainer";
+import ApptCompleteContainer from "./ApptCompleteContainer";
+import MyPatientContainer from "./MyPatientContainer";
+import MyPhysicianContainer from "./MyPhysicianContainer";
+import MyProfile from "./MyProfile";
+import EditAppointment from "./EditAppointment";
 
 
 function App() {
@@ -16,6 +21,7 @@ function App() {
   const [userList, setUserList] = useState([])
   const [patientData, setPatientData] = useState([])
   const [appointmentData, setAppointmentData] = useState([])
+  const [flowsheetData, setFlowsheetData] = useState([])
 
   useEffect(() => {
     async function fetchPhysiciansData() {
@@ -79,7 +85,18 @@ function App() {
     
   }, [])
 
+  useEffect(() => {
+    async function fetchFlowsheetData() {
+      let response = await fetch("/flowsheets")
+      response = await response.json()
+      setFlowsheetData(response)
+    }
+    fetchFlowsheetData()
+  }, [])
+
   const addAppointment = (data) => setAppointmentData(current => [data, ...current])
+
+  const addFlowsheet = (data) => setFlowsheetData(current => [data, ...current])
   
   const updateUser = (user) => setCurrentUser(user)
   
@@ -87,12 +104,17 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar setCurrentUser={setCurrentUser} />
+      <Navbar setCurrentUser={setCurrentUser} currentUser={currentUser}/>
       <Routes>
       <Route path="/" element={ < PhysiciansContainer physicianData={physicianData} /> } />
       <Route path="/appointment_new" element={ <AppointmentForm currentUser={currentUser} addAppointment={addAppointment} /> } />
-      <Route path="/appointments/flowsheet/:id" element={ < Flowsheet currentUser={currentUser} /> } />
+      <Route path="/appointments/flowsheet/:id" element={ < Flowsheet currentUser={currentUser} addFlowsheet={addFlowsheet} /> } />
       <Route path="/appointments" element={ < PatAptContainer  currentUser={currentUser} /> } />
+      <Route path="/appointment_complete" element={<ApptCompleteContainer currentUser={currentUser} /> } />
+      <Route path="/my_patients" element={<MyPatientContainer currentUser={currentUser} /> } />
+      <Route path="/my_physicians" element={<MyPhysicianContainer currentUser={currentUser} /> } />
+      <Route path="/my_profile" element={<MyProfile currentUser={currentUser} /> } />
+      <Route path="/appointment-edit/:id" element={<EditAppointment currentUser={currentUser} /> } />
       <Route path="/footer" element={ <Footer/> } />
       
       </Routes>
