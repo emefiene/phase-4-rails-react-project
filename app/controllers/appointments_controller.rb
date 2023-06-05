@@ -15,6 +15,12 @@ class AppointmentsController < ApplicationController
        render json: appointment, status: :created
     end
 
+    def update
+      appointment = Appointment.find(params[:id])
+      appointment.update!(appointment_params)
+      render json: p, status: :accepted
+   end
+
    #  def userName
    #     # user = User.find_by(id: session[:user_id])
    #     user = User.find(params[:id])

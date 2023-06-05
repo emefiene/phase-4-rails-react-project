@@ -99,6 +99,19 @@ function App() {
   const addFlowsheet = (data) => setFlowsheetData(current => [data, ...current])
   
   const updateUser = (user) => setCurrentUser(user)
+
+  const rescheduleAppointment = (user) => setAppointmentData(user)
+
+  // const editAppointment = (editAppointment) => setAppointmentData(current => {
+  //   return current.map(data => {
+  //    if(data.id === editAppointment.id){
+  //      return editAppointment
+  //    } else {
+  //      return data
+  //    }
+  //   })
+  // })
+   
   
   if (!currentUser) return <Login updateUser={updateUser} />;
 
@@ -114,7 +127,7 @@ function App() {
       <Route path="/my_patients" element={<MyPatientContainer currentUser={currentUser} /> } />
       <Route path="/my_physicians" element={<MyPhysicianContainer currentUser={currentUser} /> } />
       <Route path="/my_profile" element={<MyProfile currentUser={currentUser} /> } />
-      <Route path="/appointment-edit/:id" element={<EditAppointment currentUser={currentUser} /> } />
+      <Route path="/appointment-edit/:id" element={<EditAppointment currentUser={currentUser} rescheduleAppointment={rescheduleAppointment} /> } />
       <Route path="/footer" element={ <Footer/> } />
       
       </Routes>
