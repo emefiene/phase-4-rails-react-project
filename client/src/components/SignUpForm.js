@@ -2,7 +2,6 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-// import { useHistory } from 'react-router-dom'
 
 const SignUpForm = ({updateUser}) => {
     
@@ -18,8 +17,6 @@ const SignUpForm = ({updateUser}) => {
      const [city, setCity] = useState("")
      const [specialty, setSpecialty] = useState("")
      const [experience, setExperience] = useState("")
-    //  const [errors, setErrors] = useState([]);
-    //  const [isLoading, setIsLoading] = useState(false);
      const [role, setRole] = useState("")
      const [isLoading, setIsLoading] = useState(false);
 

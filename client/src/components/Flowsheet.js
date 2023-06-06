@@ -3,10 +3,8 @@ import {  useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { currentUserContext } from "./App";
 
-const Flowsheet = ({addFlowsheet, appointmentData}) => {
-  // console.log("cccccc", currentUser)
+const Flowsheet = () => {
  
-  
   const currentUser = useContext(currentUserContext);
     const initializedPatient = {
         reason_for_visit: "",
@@ -26,15 +24,8 @@ const Flowsheet = ({addFlowsheet, appointmentData}) => {
     }
     const [ptFormData, setPtFormData] = useState(initializedPatient)
     const [formData, setFormData] = useState(initializedPhysician)
-    const [completeFlowsheet, setCompleteFlowsheet] = useState([])
-   
-    
 
-    // const id  = currentUser.role.id
-
-     const  {id}  = useParams()
-
-    //  console.log("id", id)
+    const  {id}  = useParams()
     
     useEffect(() => {
         fetch(`/appointments/${id}`)
@@ -42,13 +33,10 @@ const Flowsheet = ({addFlowsheet, appointmentData}) => {
         .then(data => {
           setFormData(data.flowsheet)
           setPtFormData(data.flowsheet)
-          console.log("dddddd", data.flowsheet)
           
         })
       },[])
-      
-      // console.log("ccc", x)
-      // console.log("complete", appointmentData)
+
     const handleChange = (e) => {  
         const { name, value } = e.target
         setPtFormData({ ...ptFormData, [name]: value})
@@ -59,7 +47,6 @@ const Flowsheet = ({addFlowsheet, appointmentData}) => {
       setFormData({ ...formData, [name]: value})
     }
    
-
     function handleSubmit(e){
       e.preventDefault()
       if(currentUser.role_type == "Patient"){
@@ -95,39 +82,6 @@ const Flowsheet = ({addFlowsheet, appointmentData}) => {
           }
       }
     
-      // appointment
-      // : 
-      // appointment_complete
-      // : 
-      // false
-      // id
-      // : 
-      // 3
-      // patient_flowsheet_complete
-      // : 
-      // false
-    
-    // function handleSubmit (e) {
-    //   e.preventDefault()
-    //   setIsLoading(true);
-    // if(currentUser.role_type == "Patient"){
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     //PATCH to `/productions/${id}`
-    //     fetch(`/flowsheets/${id}`,{
-    //       method:'PATCH',
-    //       headers: {'Content-Type': 'application/json'},
-    //       body:JSON.stringify(ptFormData)
-    //     })
-    //     .then(res => {
-    //       if(res.ok){
-    //         res.json().then(addFlowsheet)
-    //         // history.push(`/productions/${id}`)
-    //       } else {
-    //         //Display errors
-    //         // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
-    //       }
-    //     })
         if(currentUser.role_type == "Patient"){
           return (
             <Form onSubmit={handleSubmit}>
@@ -142,7 +96,6 @@ const Flowsheet = ({addFlowsheet, appointmentData}) => {
                
                <input type="submit"/>
             </Form>
-        // }
           )
         } else if(currentUser.role_type == "Physician"){
           return (
@@ -172,56 +125,7 @@ const Flowsheet = ({addFlowsheet, appointmentData}) => {
             </Form>
         )
         }
-    
-  //   t.integer "Blood_pressure"
-  //   t.integer "temperature"
-  //   t.integer "pulse"
-  //   t.integer "oxygen_saturation"
-  //   t.integer "height"
-  //   t.integer "weight"
-  //   t.integer "bmi"
-  //   t.string "doctor_notes"
-  //   t.bigint "appointment_id", null: false
-  //   t.datetime "created_at", precision: 6, null: false
-  //   t.datetime "updated_at", precision: 6, null: false
-  //   t.index ["appointment_i
-  // //   }
-  // } else if (currentUser.role_type == "Physician"){
-
-  // const Submit = (e) => {
-  //   e.preventDefault()
-  // //   //PATCH to `/productions/${id}`
-  //   fetch(`/flowsheets/${id}`,{
-  //     method:'PATCH',
-  //     headers: {'Content-Type': 'application/json'},
-  //     body:JSON.stringify(formData)
-  //   })
-  //   .then(res => res.json())
-  //   .then(addFlowsheet)
-  //   // .then(res => {
-  //   //   if(res.ok){
-  //   //     res.json().then(addFlowsheet)
-  //   //     // history.push(`/productions/${id}`)
-  //   //   } else {
-  //   //     //Display errors
-  //   //     // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
-  //   //   }
-  //   // })
-  // }
-
-  
 }
-   
-
-
-// "doctor_notes": null,
-// "appointment": {
-//   "id": 3,
-//   "time": "7/12/2023",
-//   "patient_flowsheet_complete": false,
-//   "appointment_complete": false
-// }
-
 export default Flowsheet
 const Form = styled.form`
 display:flex;

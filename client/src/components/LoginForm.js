@@ -7,10 +7,6 @@ function LoginForm ({updateUser}) {
         username:'',  
         password:''
     })
-    const [errors, setErrors] = useState([])
-    
-    // const history = useHistory()
-   
     const {username, password} = formData
 
     function onSubmit(e){
@@ -20,16 +16,16 @@ function LoginForm ({updateUser}) {
             password
         }
 
-   const post =     fetch(`/login`,{
+     const post =     fetch(`/login`,{
           method:'POST',
           headers:{'Content-Type': 'application/json'},
           body:JSON.stringify(user)
         })
         .then(res => {
             if(res.ok){
-                res.json().then(updateUser
+                res.json().then(updateUser)
                     // history.push(`/users/${user.id}`)
-                )
+                
             }else {
                 // res.json().then(json => setErrors(json.errors))
             }

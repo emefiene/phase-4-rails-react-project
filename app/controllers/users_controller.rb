@@ -10,9 +10,7 @@ class UsersController < ApplicationController
         render json: current_user, status: :ok
     end
     
-
-    def create
-       
+    def create  
         user = User.create!(params_user)
         if user.valid?
         session[:user_id] = user.id
@@ -21,11 +19,9 @@ class UsersController < ApplicationController
     end
 
     def upcoming_appointments
-        # user = User.find_by(id: session[:user_id])
         user = User.find(params[:id])
         upcoming_appointments = user.role.appointments.select { |apt| apt.appointment_complete == false }
         render json: upcoming_appointments
-       #  render json: Appointment.all
      end
 
      def completed_appointments
@@ -38,7 +34,6 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         your_physicians = user.role.physicians.uniq
         render json: your_physicians
-       #  render json: Appointment.all
      end
 
      def your_patients
@@ -46,10 +41,6 @@ class UsersController < ApplicationController
         your_patients = user.role.patients.uniq
         render json: your_patients
      end
-
-    #  get "users/:id/doctors", to: "users#my_doctors"
-  
-    #  get "users/:id/patients", to: "users#my_patients"
 
      private
 

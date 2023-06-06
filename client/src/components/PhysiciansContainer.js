@@ -1,8 +1,21 @@
-import React from 'react'
+import { useState, useEffect, useContext } from 'react'
 import PhysiciansCard from './PhysiciansCard'
 
 
-const PhysiciansContainer = ({physicianData}) => {
+const PhysiciansContainer = () => {
+
+  const [physicianData, setPhysicianData] = useState([])
+ 
+
+
+  useEffect(() => {
+    async function fetchPhysiciansData() {
+      let response = await fetch("/physicians")
+      response = await response.json()
+      setPhysicianData(response)
+    }
+    fetchPhysiciansData()
+  }, [])
  
   return (
     <div>

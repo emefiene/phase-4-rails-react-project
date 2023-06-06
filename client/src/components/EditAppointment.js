@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { currentUserContext } from "./App";
 
 
-const EditAppointment = ({rescheduleAppointment}) => {
+const EditAppointment = () => {
     
     const currentUser = useContext(currentUserContext);
     const [formData, setFormData] = useState({
@@ -55,7 +55,7 @@ const EditAppointment = ({rescheduleAppointment}) => {
               res.json()
             .then(data => {
             console.log(data)
-            rescheduleAppointment(data)
+            // rescheduleAppointment(data)
             console.log("Appointment created successfully!")
             })
             //   history.push(`/productions/${id}`)
@@ -85,7 +85,7 @@ const EditAppointment = ({rescheduleAppointment}) => {
               res.json()
             .then(data => {
             console.log(data)
-            rescheduleAppointment(data)
+            // rescheduleAppointment(data)
             console.log("Appointment created successfully!")
             })
             //   history.push(`/productions/${id}`)

@@ -8,7 +8,6 @@ const ApptCompleteContainer = () => {
 
     const currentUser = useContext(currentUserContext);
     const [apptComplete, setApptComplete] = useState([])
-    //  const [apptComplete, setApptComplete] = useState([])
      
      useEffect(() => {
         fetch(`users/${currentUser.id}/appointments_complete`)
@@ -19,18 +18,6 @@ const ApptCompleteContainer = () => {
         })
         
       }, [])
-     
-    //   'users/:id/appointments_complete', to: 'users#completed_appointments'
-      // useEffect(() => {
-      //   fetch(`users/${currentUser.id}/appointments_complete`)
-      //   .then(res => res.json())
-      //   .then(data => {
-      //     setApptComplete(data)
-      //     console.log("complete", data)
-      //   })
-        
-      // }, [])
-  
   
     return (
       <div>

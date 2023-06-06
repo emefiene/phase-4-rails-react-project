@@ -1,17 +1,10 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import { currentUserContext } from "./App";
   
 
 const AppointmentCard = ({appointmentObj:{appointment_complete,patient,physician,patient_flowsheet_complete, time}, appointmentObj}) => {
-     console.log(appointmentObj)
      
   const currentUser = useContext(currentUserContext);
-
-    //  if(currentUser.role_type == "Patient"){
-    //         const patient = {first_name,last_name,img_url, phone_number} 
-    //  } else if (currentUser.role_type == "Physician"){
-    //         const {first_name,last_name,specialty,phone_number,years_of_experience,img_url} = physician
-    //  }
      
   if(currentUser.role_type == "Patient"){
     return (
