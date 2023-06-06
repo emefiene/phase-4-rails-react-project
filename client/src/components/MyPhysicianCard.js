@@ -1,6 +1,10 @@
-import React from 'react'
+import {useContext} from 'react'
+import { currentUserContext } from "./App";
 
-const MyPhysicianCard = ({myPhysicianObj:{last_name,first_name,phone_number,img_url,bio,rating,specialty,years_of_experience,city},myPhysicianObj,currentUser}) => {
+const MyPhysicianCard = ({myPhysicianObj:{last_name,first_name,phone_number,img_url,bio,rating,specialty,years_of_experience,city},myPhysicianObj}) => {
+
+    const currentUser = useContext(currentUserContext);
+
            
   return (
     <div>

@@ -1,6 +1,10 @@
-import React from 'react'
+import {useContext} from 'react'
+import { currentUserContext } from "./App";
 
-const MyPatientCard = ({myPatientObj:{last_name, first_name, phone_number, img_url,date_of_birth}, myPatientObj, currentUser}) => {
+const MyPatientCard = ({myPatientObj:{last_name, first_name, phone_number, img_url,date_of_birth}, myPatientObj}) => {
+
+  const currentUser = useContext(currentUserContext);
+
   return (
     <div>
       <img style={{ width: "300px",

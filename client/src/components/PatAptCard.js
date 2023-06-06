@@ -1,9 +1,29 @@
-import React from 'react'
+import {useContext} from 'react'
 import  { Link, useParams, useHistory } from 'react-router-dom'
+import { currentUserContext } from "./App";
 
-const PatAptCard = ({apptUpcomingObj:{appointment_complete,flowsheet, patient_flowsheet_complete,time},apptUpcomingObj,patient,physician,currentUser,link}) => {
-    
+const PatAptCard = ({apptUpcomingObj:{appointment_complete,flowsheet, id, patient_flowsheet_complete,time},apptUpcomingObj,patient,physician,link1,link2,deleteAppointment}) => {
+
+   
+ const currentUser = useContext(currentUserContext);
  console.log("apptup", apptUpcomingObj)
+
+ function handleDeleteAppointment(){
+    fetch(`/appointments/${id}`,{
+      method:'DELETE',
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => {
+      if(res.ok){
+      deleteAppointment(id)
+        // history.push('/')
+      }
+      // } else {
+      //   res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+      // }
+    })
+  }
+   
     
     if (currentUser.role_type == "Patient"){
         return (
@@ -12,14 +32,16 @@ const PatAptCard = ({apptUpcomingObj:{appointment_complete,flowsheet, patient_fl
                <h3>Specialty: {physician.specialty} </h3>
                <h2>Appointment Time: {time} </h2>
                {
-               patient_flowsheet_complete ? false :(
+               appointment_complete ? false :(
             
-                <Link to={link}>Edit Production</Link>     
+                <Link to={link1}>Edit Production</Link>     
                 
                )
                }
               <br></br>
-               <Link to={`/appointment-edit/${apptUpcomingObj.id}`}>Reschedule Appointment</Link>
+               <Link to={`/appointment-edit/${apptUpcomingObj.id}`}><button>Reschedule Appointment</button></Link>
+               <br></br>
+               <button onClick={() => handleDeleteAppointment(apptUpcomingObj)}>Cancel Appointment</button>
             </div>
           )
     } else if (currentUser.role_type == "Physician"){
@@ -30,10 +52,16 @@ const PatAptCard = ({apptUpcomingObj:{appointment_complete,flowsheet, patient_fl
                {
                 appointment_complete ? false :(
                     
-                    <Link to={link}>Edit Production</Link>
+                    <Link to={link1}>Edit Production</Link>
                     
                    )
                }
+               <br></br>
+
+               <h3>Please Complete Your Patient Flowsheet before proceeding.</h3>
+
+               <Link to={`/appointment-edit/${apptUpcomingObj.id}`}><button>Appointment Complete</button></Link>
+               
             </div>
           )
     }

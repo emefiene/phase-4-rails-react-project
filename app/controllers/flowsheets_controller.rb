@@ -11,11 +11,12 @@ class FlowsheetsController < ApplicationController
     end
 
     def update
+
       @flowsheet = Flowsheet.find(params[:id])
       if session[:user_role] == "Patient"
         @flowsheet.update(flowsheet_patient_params)
         render json: @flowsheet, status: :accepted
-      elsif session[:user_role] == "Doctor"
+      elsif session[:user_role] == "Physician"
         @flowsheet.update(flowsheet_physician_params)
         render json: @flowsheet, status: :accepted
       end

@@ -31,6 +31,12 @@ class AppointmentsController < ApplicationController
 
    #  get '/userName', to: 'appointments#user_name'
 
+  def destroy
+   appointment = Appointment.find(params[:id])
+   appointment.destroy
+   head :no_content
+end
+
     private
 
     def appointment_params

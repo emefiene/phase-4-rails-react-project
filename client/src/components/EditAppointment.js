@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import { currentUserContext } from "./App";
 
-const EditAppointment = ({currentUser, rescheduleAppointment}) => {
 
+const EditAppointment = ({rescheduleAppointment}) => {
+    
+    const currentUser = useContext(currentUserContext);
     const [formData, setFormData] = useState({
         time:"",
         physician_id:""
@@ -34,14 +37,16 @@ const EditAppointment = ({currentUser, rescheduleAppointment}) => {
         .then(physicianDate => setPhysicianArray(physicianDate))
     }, [])
 
-    const handleSubmit = (e) => {
+    
+        
+      const handleSubmit = (e) => {
         e.preventDefault()
         fetch(`/appointments/${id}`,{
             method: "PATCH",
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({...formData, 
                 patient_id: currentUser.role.id,
-                patient_flowsheet_complete: false,
+                patient_flowsheet_complete: true,
                 appointment_complete: false
              })
         })
@@ -63,7 +68,40 @@ const EditAppointment = ({currentUser, rescheduleAppointment}) => {
           })
 
     }
-    return (
+      
+     if(currentUser.role_type == "Physician"){
+     
+        fetch(`/appointments/${id}`,{
+            method: "PATCH",
+            headers:{'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                physcian_id: currentUser.role.id,
+                patient_flowsheet_complete: true,
+                appointment_complete: true,
+             })
+        })
+        .then(res => {
+            if(res.ok){
+              res.json()
+            .then(data => {
+            console.log(data)
+            rescheduleAppointment(data)
+            console.log("Appointment created successfully!")
+            })
+            //   history.push(`/productions/${id}`)
+            // console.log(appointment)
+            // console.log("Appointment created successfully!")
+            } else {
+              //Display errors
+            //   res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+            }
+          })
+
+    }
+    
+
+    if(currentUser.role_type == "Patient"){
+      return (
         <Form onSubmit={handleSubmit}>
           <label>Select Physician</label> 
             <Select name="physician_id" value={formData.physician_id} onChange={handleChange}>
@@ -77,6 +115,15 @@ const EditAppointment = ({currentUser, rescheduleAppointment}) => {
             <input type="submit" />
         </Form>
       )
+
+    } else {
+        return(
+          <div>
+               <h3> Completed Thanks</h3>
+          </div>
+        )
+    }
+   
 }
 
 export default EditAppointment

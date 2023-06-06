@@ -1,8 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useContext } from 'react'
 import ApptCompleteCard from "./ApptCompleteCard"
+import { currentUserContext } from "./App";
 
+    
 
-const ApptCompleteContainer = ({currentUser}) => {
+const ApptCompleteContainer = () => { 
+
+    const currentUser = useContext(currentUserContext);
     const [apptComplete, setApptComplete] = useState([])
     //  const [apptComplete, setApptComplete] = useState([])
      
@@ -31,12 +35,12 @@ const ApptCompleteContainer = ({currentUser}) => {
     return (
       <div>
           {
-            apptComplete.map((apptUpcomingObj, index) => <ApptCompleteCard
-               patient={apptUpcomingObj.patient}
-               physician={apptUpcomingObj.physician}
-               apptUpcomingObj={apptUpcomingObj}
+            apptComplete.map((apptCompleteObj, index) => <ApptCompleteCard
+               patient={apptCompleteObj.patient}
+               physician={apptCompleteObj.physician}
+               apptCompleteObj={apptCompleteObj}
+               flowsheet={apptCompleteObj.flowsheet}
                currentUser={currentUser}
-               link = {`flowsheet/${apptUpcomingObj.flowsheet.id}`}
                key={index}     
             />)
           }

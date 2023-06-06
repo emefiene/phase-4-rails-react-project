@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { currentUserContext } from "./App";
 
-const Navbar = ({setCurrentUser, currentUser}) => {
+const Navbar = ({setCurrentUser}) => {
+
+  const currentUser = useContext(currentUserContext);
   const [menu, setMenu] = useState(true)
 
   const handleLogOut = () => {

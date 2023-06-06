@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import AppointmentCard from './AppointmentCard'
 import PatAptCard from './PatAptCard'
+import { currentUserContext } from "./App";
 
 
-const PatAptContainer = ({ currentUser}) => {
+const PatAptContainer = ({ deleteAppointment}) => {
 
+   const currentUser = useContext(currentUserContext);
    const [apptUpcoming, setApptUpcoming] = useState([])
   //  const [apptComplete, setApptComplete] = useState([])
    
@@ -28,7 +30,8 @@ const PatAptContainer = ({ currentUser}) => {
     //   })
       
     // }, [])
-
+    // "/appointments/Physician-flowsheet/:id"
+    // "/appointments/flowsheet/:id"
 
   return (
     <div>
@@ -38,7 +41,9 @@ const PatAptContainer = ({ currentUser}) => {
              physician={apptUpcomingObj.physician}
              apptUpcomingObj={apptUpcomingObj}
              currentUser={currentUser}
-             link = {`flowsheet/${apptUpcomingObj.flowsheet.id}`}
+             link1 = {`flowsheet/${apptUpcomingObj.flowsheet.id}`}
+             link2 = {`Physician-flowsheet/${apptUpcomingObj.flowsheet.id}`}
+             deleteAppointment={deleteAppointment}
              key={index}     
           />)
         }

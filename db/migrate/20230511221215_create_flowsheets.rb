@@ -4,13 +4,13 @@ class CreateFlowsheets < ActiveRecord::Migration[6.1]
       t.string :reason_for_visit
       t.string :location
       t.string :duration
-      t.integer :Blood_pressure
-      t.integer :temperature
-      t.integer :pulse
-      t.integer :oxygen_saturation
-      t.integer :height
-      t.integer :weight
-      t.integer :bmi
+      t.string :Blood_pressure
+      t.string :temperature
+      t.string :pulse
+      t.string :oxygen_saturation
+      t.string :height
+      t.string :weight
+      t.string :bmi
       t.string :doctor_notes
       t.belongs_to :appointment, null: false, foreign_key: true
 

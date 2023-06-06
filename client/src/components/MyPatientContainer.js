@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import MyPatientCard from './MyPatientCard'
+import { currentUserContext } from "./App";
 
 
-const MyPatientContainer = ({ currentUser}) => {
+const MyPatientContainer = () => {
+   
+   const currentUser = useContext(currentUserContext);
 
    const [myPatient, setMyPatient] = useState([])
   //  const [apptComplete, setApptComplete] = useState([])

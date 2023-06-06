@@ -1,6 +1,10 @@
-import React from 'react'
+import {useContext} from 'react'
+import { currentUserContext } from "./App";
+ 
 
 const PhysiciansCard = ({physicianDataObj:{img_url,first_name,last_name,bio,city,specialty,years_of_experience,phone_number,rating}}) => {
+ 
+  const currentUser = useContext(currentUserContext);
   return (
     <div style={{ marginLeft: "20px"}}>
     <img style={{ width: "300px",

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PhysiciansContainer from "./PhysiciansContainer"
@@ -12,7 +12,9 @@ import MyPatientContainer from "./MyPatientContainer";
 import MyPhysicianContainer from "./MyPhysicianContainer";
 import MyProfile from "./MyProfile";
 import EditAppointment from "./EditAppointment";
+import PhysicianFlowSheetComplete from "./PhysicianFlowSheetComplete";
 
+export const currentUserContext = createContext(null)
 
 function App() {
 
@@ -94,6 +96,24 @@ function App() {
     fetchFlowsheetData()
   }, [])
 
+  // const handleDeleteAppointment = (params) => {
+  //   fetch(`/appointments/${params.id}`,{
+  //     method:'DELETE',
+  //     headers: {'Content-Type': 'application/json'}
+  //   })
+  //   .then(res => res.json())
+  //       .then(data => {
+  //         const deleteAppointment = data.filter(p => p.id !== params.id)
+  //         setFlowsheetData(deleteAppointment)
+  //       })
+  //       // history.push('/')
+  //     // }
+  //     // } else {
+  //     //   res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+  //     // }
+  //   // })
+  // }
+
   const addAppointment = (data) => setAppointmentData(current => [data, ...current])
 
   const addFlowsheet = (data) => setFlowsheetData(current => [data, ...current])
@@ -111,26 +131,43 @@ function App() {
   //    }
   //   })
   // })
+
+  // const [apptUpcoming, setApptUpcoming] = useState([])
+  // //  const [apptComplete, setApptComplete] = useState([])
    
+  //  useEffect(() => {
+  //     fetch(`users/${up.id}/my_appointments`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setApptUpcoming(data)
+  //       console.log("username", data)
+  //     })
+      
+  //   }, [])
+   
+   
+  const deleteAppointment = (id) => setAppointmentData(current => current.filter(p => p.id !== id)) 
   
   if (!currentUser) return <Login updateUser={updateUser} />;
 
   return (
     <div className="App">
-      <Navbar setCurrentUser={setCurrentUser} currentUser={currentUser}/>
+      <currentUserContext.Provider value={currentUser}>
+      <Navbar setCurrentUser={setCurrentUser} />
       <Routes>
       <Route path="/" element={ < PhysiciansContainer physicianData={physicianData} /> } />
-      <Route path="/appointment_new" element={ <AppointmentForm currentUser={currentUser} addAppointment={addAppointment} /> } />
-      <Route path="/appointments/flowsheet/:id" element={ < Flowsheet currentUser={currentUser} addFlowsheet={addFlowsheet} /> } />
-      <Route path="/appointments" element={ < PatAptContainer  currentUser={currentUser} /> } />
-      <Route path="/appointment_complete" element={<ApptCompleteContainer currentUser={currentUser} /> } />
-      <Route path="/my_patients" element={<MyPatientContainer currentUser={currentUser} /> } />
-      <Route path="/my_physicians" element={<MyPhysicianContainer currentUser={currentUser} /> } />
-      <Route path="/my_profile" element={<MyProfile currentUser={currentUser} /> } />
-      <Route path="/appointment-edit/:id" element={<EditAppointment currentUser={currentUser} rescheduleAppointment={rescheduleAppointment} /> } />
+      <Route path="/appointment_new" element={ <AppointmentForm  addAppointment={addAppointment} /> } />
+      <Route path="/appointments/flowsheet/:id" element={ < Flowsheet addFlowsheet={addFlowsheet} appointmentData={appointmentData} /> } />
+      <Route path="/appointments" element={ < PatAptContainer deleteAppointment={deleteAppointment} /> } />
+      <Route path="/appointment_complete" element={<ApptCompleteContainer  /> } />
+      <Route path="/my_patients" element={<MyPatientContainer  /> } />
+      <Route path="/my_physicians" element={<MyPhysicianContainer /> } />
+      <Route path="/my_profile" element={<MyProfile  /> } />
+      <Route path="/appointment-edit/:id" element={<EditAppointment rescheduleAppointment={rescheduleAppointment} /> } />
       <Route path="/footer" element={ <Footer/> } />
       
       </Routes>
+      </currentUserContext.Provider>
     </div>
   );
 }

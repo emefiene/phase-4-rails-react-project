@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from 'styled-components'
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import { currentUserContext } from "./App";
 
-const AppointmentForm = ({currentUser,addAppointment}) => {
-    
+
+const AppointmentForm = ({addAppointment}) => {
+
+    const currentUser = useContext(currentUserContext);
     const [formData, setFormData] = useState({
         time:"",
         physician_id:""
@@ -30,7 +33,7 @@ const AppointmentForm = ({currentUser,addAppointment}) => {
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({...formData, 
                 patient_id: currentUser.role.id,
-                patient_flowsheet_complete: false,
+                patient_flowsheet_complete: true,
                 appointment_complete: false
              })
         })
