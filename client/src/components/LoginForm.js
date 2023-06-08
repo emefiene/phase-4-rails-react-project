@@ -54,7 +54,6 @@ function LoginForm ({updateUser}) {
        
         <input type='submit' value='Log in!' />
       </Form>
-      {errors? <div>{errors}</div>:null}
         </div>
     )
 }
