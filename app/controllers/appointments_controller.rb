@@ -25,7 +25,7 @@ class AppointmentsController < ApplicationController
    appointment = Appointment.find(params[:id])
    appointment.destroy
    head :no_content
-end
+  end
 
     private
 
