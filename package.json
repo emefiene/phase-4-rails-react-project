@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "puma": "^4.0.0",
+    "react-scripts": "^2.1.3",
     "sql": "^0.78.0"
   }
 }
