@@ -21,10 +21,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/pg-1.2.3/ext
-make DESTDIR\= sitearchdir\=./.gem.20230609-38397-gefopf sitelibdir\=./.gem.20230609-38397-gefopf clean
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-1ngd5rl sitelibdir\=./.gem.20230609-43363-1ngd5rl clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/pg-1.2.3/ext
-make DESTDIR\= sitearchdir\=./.gem.20230609-38397-gefopf sitelibdir\=./.gem.20230609-38397-gefopf
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-1ngd5rl sitelibdir\=./.gem.20230609-43363-1ngd5rl
 compiling gvl_wrappers.c
 compiling pg.c
 compiling pg_binary_decoder.c
@@ -2925,5 +2925,5 @@ compiling pg_util.c
 linking shared-object pg_ext.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/pg-1.2.3/ext
-make DESTDIR\= sitearchdir\=./.gem.20230609-38397-gefopf sitelibdir\=./.gem.20230609-38397-gefopf install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 pg_ext.bundle ./.gem.20230609-38397-gefopf
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-1ngd5rl sitelibdir\=./.gem.20230609-43363-1ngd5rl install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 pg_ext.bundle ./.gem.20230609-43363-1ngd5rl

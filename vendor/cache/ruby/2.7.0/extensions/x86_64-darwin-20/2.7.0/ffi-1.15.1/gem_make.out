@@ -9,10 +9,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/ffi-1.15.1/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20230609-38397-xc3f2p sitelibdir\=./.gem.20230609-38397-xc3f2p clean
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-1o0cggg sitelibdir\=./.gem.20230609-43363-1o0cggg clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/ffi-1.15.1/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20230609-38397-xc3f2p sitelibdir\=./.gem.20230609-38397-xc3f2p
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-1o0cggg sitelibdir\=./.gem.20230609-43363-1o0cggg
 compiling AbstractMemory.c
 AbstractMemory.c:1100:17: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
     id_to_ptr = rb_intern("to_ptr");
@@ -4086,5 +4086,5 @@ compiling ffi.c
 linking shared-object ffi_c.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/ffi-1.15.1/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20230609-38397-xc3f2p sitelibdir\=./.gem.20230609-38397-xc3f2p install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20230609-38397-xc3f2p
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-1o0cggg sitelibdir\=./.gem.20230609-43363-1o0cggg install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20230609-43363-1o0cggg
