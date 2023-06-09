@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-./bin/render-build.sh
+# ./bin/render-build.sh
 # exit on error
 # set -o errexit
 
