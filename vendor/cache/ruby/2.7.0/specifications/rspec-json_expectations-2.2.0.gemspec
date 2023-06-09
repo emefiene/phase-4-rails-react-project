@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
   s.files = ["bin/build".freeze, "bin/with-rspec-3".freeze]
   s.homepage = "https://github.com/waterlink/rspec-json_expectations".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.3.22".freeze
+  s.rubygems_version = "3.1.6".freeze
   s.summary = "Set of matchers and helpers to allow you test your APIs responses like a pro.".freeze
 
-  s.installed_by_version = "3.3.22" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.1.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

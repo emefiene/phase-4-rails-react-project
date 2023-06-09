@@ -1,17 +1,17 @@
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.7.0/ext/racc/cparse
-/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/2.7.0 -r ./siteconf20230609-32088-61bx0c.rb extconf.rb
 checking for rb_block_call()... yes
 checking for rb_ary_subseq()... yes
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.7.0/ext/racc/cparse
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1t3xp3a sitelibdir\=./.gem.20230609-57497-1t3xp3a clean
+make "DESTDIR=" clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.7.0/ext/racc/cparse
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1t3xp3a sitelibdir\=./.gem.20230609-57497-1t3xp3a
+make "DESTDIR="
 compiling cparse.c
 linking shared-object racc/cparse.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.7.0/ext/racc/cparse
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1t3xp3a sitelibdir\=./.gem.20230609-57497-1t3xp3a install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20230609-57497-1t3xp3a/racc
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20230609-32088-1fjt1db/racc

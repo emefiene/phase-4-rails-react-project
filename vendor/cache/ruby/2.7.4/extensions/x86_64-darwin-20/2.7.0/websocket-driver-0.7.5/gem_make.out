@@ -1,0 +1,15 @@
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230609-57497-mu7mpe sitelibdir\=./.gem.20230609-57497-mu7mpe clean
+
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230609-57497-mu7mpe sitelibdir\=./.gem.20230609-57497-mu7mpe
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230609-57497-mu7mpe sitelibdir\=./.gem.20230609-57497-mu7mpe install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20230609-57497-mu7mpe

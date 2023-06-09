@@ -1,5 +1,5 @@
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/puma-5.6.5/ext/puma_http11
-/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/2.7.0 -r ./siteconf20230609-32088-1ep25om.rb extconf.rb
 checking for BIO_read() in -lcrypto... yes
 checking for SSL_CTX_new() in -lssl... yes
 checking for openssl/bio.h... yes
@@ -14,15 +14,15 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/puma-5.6.5/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230609-43363-zkt48o sitelibdir\=./.gem.20230609-43363-zkt48o clean
+make "DESTDIR=" clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/puma-5.6.5/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230609-43363-zkt48o sitelibdir\=./.gem.20230609-43363-zkt48o
+make "DESTDIR="
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/puma-5.6.5/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230609-43363-zkt48o sitelibdir\=./.gem.20230609-43363-zkt48o install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20230609-43363-zkt48o/puma
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20230609-32088-efr14r/puma

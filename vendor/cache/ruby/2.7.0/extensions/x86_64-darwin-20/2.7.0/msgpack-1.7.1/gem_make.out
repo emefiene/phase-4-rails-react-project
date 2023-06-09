@@ -1,5 +1,5 @@
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/msgpack-1.7.1/ext/msgpack
-/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/2.7.0 -r ./siteconf20230609-32088-ycc0hv.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_enc_interned_str() in ruby.h... no
@@ -15,10 +15,10 @@ checking for whether -DSTR_UMINUS_DEDUPE_FROZEN=0 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/msgpack-1.7.1/ext/msgpack
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1yfih5m sitelibdir\=./.gem.20230609-57497-1yfih5m clean
+make "DESTDIR=" clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/msgpack-1.7.1/ext/msgpack
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1yfih5m sitelibdir\=./.gem.20230609-57497-1yfih5m
+make "DESTDIR="
 compiling buffer.c
 buffer.c:32:16: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
     s_uminus = rb_intern("-@");
@@ -1591,5 +1591,5 @@ unpacker_ext_registry.c:27:13: note: ')' token is here
 linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/msgpack-1.7.1/ext/msgpack
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1yfih5m sitelibdir\=./.gem.20230609-57497-1yfih5m install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 msgpack.bundle ./.gem.20230609-57497-1yfih5m/msgpack
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 msgpack.bundle ./.gem.20230609-32088-1vhq1h8/msgpack

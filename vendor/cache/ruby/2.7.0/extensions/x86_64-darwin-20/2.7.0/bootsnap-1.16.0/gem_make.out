@@ -1,12 +1,12 @@
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
-/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/2.7.0 -r ./siteconf20230609-32088-1sv427h.rb extconf.rb
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1imt1yz sitelibdir\=./.gem.20230609-57497-1imt1yz clean
+make "DESTDIR=" clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1imt1yz sitelibdir\=./.gem.20230609-57497-1imt1yz
+make "DESTDIR="
 compiling bootsnap.c
 bootsnap.c:156:84: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
   rb_cBootsnap_CompileCache_UNCOMPILABLE = rb_const_get(rb_mBootsnap_CompileCache, rb_intern("UNCOMPILABLE"));
@@ -366,5 +366,5 @@ bootsnap.c:952:36: note: ')' token is here
 linking shared-object bootsnap/bootsnap.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-1imt1yz sitelibdir\=./.gem.20230609-57497-1imt1yz install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20230609-57497-1imt1yz/bootsnap
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20230609-32088-1a114md/bootsnap

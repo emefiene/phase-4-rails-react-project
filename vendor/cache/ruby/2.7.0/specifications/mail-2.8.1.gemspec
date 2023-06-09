@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT".freeze]
   s.rdoc_options = ["--exclude".freeze, "lib/mail/values/unicode_tables.dat".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.5".freeze)
-  s.rubygems_version = "3.3.22".freeze
+  s.rubygems_version = "3.1.6".freeze
   s.summary = "Mail provides a nice Ruby DSL for making, sending and reading emails.".freeze
 
-  s.installed_by_version = "3.3.22" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.1.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

@@ -1,5 +1,5 @@
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.9/ext/nio4r
-/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/2.7.0 -r ./siteconf20230609-32088-84qv2p.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for linux/io_uring.h... no
@@ -13,10 +13,10 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.9/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20230609-43363-3esrx7 sitelibdir\=./.gem.20230609-43363-3esrx7 clean
+make "DESTDIR=" clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.9/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20230609-43363-3esrx7 sitelibdir\=./.gem.20230609-43363-3esrx7
+make "DESTDIR="
 compiling bytebuffer.c
 compiling monitor.c
 monitor.c:90:25: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
@@ -3698,5 +3698,5 @@ selector.c:542:36: note: ')' token is here
 linking shared-object nio4r_ext.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.9/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20230609-43363-3esrx7 sitelibdir\=./.gem.20230609-43363-3esrx7 install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20230609-43363-3esrx7
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20230609-32088-lyqxqd

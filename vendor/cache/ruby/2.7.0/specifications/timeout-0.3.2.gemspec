@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.email = ["matz@ruby-lang.org".freeze]
   s.homepage = "https://github.com/ruby/timeout".freeze
   s.licenses = ["Ruby".freeze, "BSD-2-Clause".freeze]
-  s.rubygems_version = "3.3.22".freeze
+  s.rubygems_version = "3.1.6".freeze
   s.summary = "Auto-terminate potentially long-running operations in Ruby.".freeze
 
-  s.installed_by_version = "3.3.22" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.1.6" if s.respond_to? :installed_by_version
 end

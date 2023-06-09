@@ -1,5 +1,5 @@
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
-/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/2.7.0 -r ./siteconf20230609-32088-pjjcb2.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... yes
 checking for ffi_prep_cif_var()... yes
 checking for ffi_raw_call()... yes
@@ -9,10 +9,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-lvwgd2 sitelibdir\=./.gem.20230609-57497-lvwgd2 clean
+make "DESTDIR=" clean
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-lvwgd2 sitelibdir\=./.gem.20230609-57497-lvwgd2
+make "DESTDIR="
 compiling AbstractMemory.c
 AbstractMemory.c:1100:17: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
     id_to_ptr = rb_intern("to_ptr");
@@ -4086,5 +4086,5 @@ compiling ffi.c
 linking shared-object ffi_c.bundle
 
 current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20230609-57497-lvwgd2 sitelibdir\=./.gem.20230609-57497-lvwgd2 install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20230609-57497-lvwgd2
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20230609-32088-d353x1
