@@ -24,7 +24,7 @@ See Environment Setup below for instructions on installing these tools if you
 don't already have them.
 
 ## Setup
-
+<!-- 
 Start by **cloning** (not forking) the project template repository and removing
 the remote:
 
@@ -123,7 +123,7 @@ remote PostgreSQL instance.
 
 To create the database, run this SQL command:
 
-```sql
+```sql -->
 CREATE DATABASE new_db_name;
 ```
 
