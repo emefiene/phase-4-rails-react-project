@@ -1,4 +1,4 @@
-<!-- # Project Template: React/Rails API
+# Project Template: React/Rails API
 
 ## Description
 
@@ -15,7 +15,7 @@ SQLite, you will need to make the following changes in the project files:
 
 ## Requirements
 
-<!-- - Ruby 2.7.4
+- Ruby 2.7.4
 - NodeJS (v16), and npm
 - Render account
 - Postgresql
@@ -348,5 +348,4 @@ troubleshoot:
 ## Resources
 
 - [Getting Started with Ruby on Rails on Render](https://render.com/docs/deploy-rails)
-- [Render Databases Guide](https://render.com/docs/databases) -->
-<!--  -->
+- [Render Databases Guide](https://render.com/docs/databases)
