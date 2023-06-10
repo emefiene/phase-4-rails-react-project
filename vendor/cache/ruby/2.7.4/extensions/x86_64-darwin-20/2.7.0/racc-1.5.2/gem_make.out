@@ -1,0 +1,16 @@
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/Users/piusemefiene/.rvm/rubies/ruby-2.7.4/bin/ruby -I /Users/piusemefiene/.rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-dxlgm2 sitelibdir\=./.gem.20230609-43363-dxlgm2 clean
+
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-dxlgm2 sitelibdir\=./.gem.20230609-43363-dxlgm2
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/piusemefiene/Development/code/phase-5-project/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230609-43363-dxlgm2 sitelibdir\=./.gem.20230609-43363-dxlgm2 install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20230609-43363-dxlgm2/racc
