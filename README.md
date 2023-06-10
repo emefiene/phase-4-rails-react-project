@@ -1,4 +1,4 @@
-# Project Template: React/Rails API
+<!-- # Project Template: React/Rails API
 
 ## Description
 
@@ -348,4 +348,4 @@ troubleshoot:
 ## Resources
 
 - [Getting Started with Ruby on Rails on Render](https://render.com/docs/deploy-rails)
-- [Render Databases Guide](https://render.com/docs/databases)
+- [Render Databases Guide](https://render.com/docs/databases) -->
