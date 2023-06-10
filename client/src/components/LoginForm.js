@@ -7,6 +7,7 @@ function LoginForm ({updateUser}) {
         username:'',  
         password:''
     })
+    const [errors, setErrors] = useState([])
     const {username, password} = formData
 
     function onSubmit(e){
@@ -27,6 +28,7 @@ function LoginForm ({updateUser}) {
                     // history.push(`/users/${user.id}`)
                 
             }else {
+                res.json().then(json => setErrors(json.errors))
                 // res.json().then(json => setErrors(json.errors))
             }
         })
@@ -54,6 +56,7 @@ function LoginForm ({updateUser}) {
        
         <input type='submit' value='Log in!' />
       </Form>
+         {errors? <div>{errors}:</div>:null}
         </div>
     )
 }

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def index
-        render json: User.all
+        render json: User.all, status: :ok
 
     end
 
@@ -21,25 +21,25 @@ class UsersController < ApplicationController
     def upcoming_appointments
         user = User.find(params[:id])
         upcoming_appointments = user.role.appointments.select { |apt| apt.appointment_complete == false }
-        render json: upcoming_appointments
+        render json: upcoming_appointments, status: :ok
      end
 
      def completed_appointments
         user = User.find(params[:id])
         completed_appointments = user.role.appointments.select { |apt| apt.appointment_complete == true}
-        render json: completed_appointments
+        render json: completed_appointments, status: :ok
      end
 
      def your_physicians
         user = User.find(params[:id])
         your_physicians = user.role.physicians.uniq
-        render json: your_physicians
+        render json: your_physicians, status: :ok
      end
 
      def your_patients
         user = User.find(params[:id])
         your_patients = user.role.patients.uniq
-        render json: your_patients
+        render json: your_patients, status: :ok
      end
 
      private

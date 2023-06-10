@@ -14,6 +14,7 @@ const AppointmentForm = () => {
         
     })
     const [physicianArray, setPhysicianArray] = useState([])
+    const [errors, setErrors] = useState([])
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -49,13 +50,15 @@ const AppointmentForm = () => {
             // console.log("Appointment created successfully!")
             } else {
               //Display errors
-            //   res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+              // res.json().then(data => console.log(data))
+              res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
             }
           })
 
     }
 
   return (
+    <div>
     <Form onSubmit={handleSubmit}>
       <label>Select Physician</label> 
         <Select name="physician_id" value={formData.physician_id} onChange={handleChange}>
@@ -68,6 +71,8 @@ const AppointmentForm = () => {
         <input type="text" name="time" onChange={handleChange} value={formData.time} />
         <input type="submit" />
     </Form>
+      {errors?errors.map(e => <h2 style={{color:'red'}}>{e.toUpperCase()}</h2>):null}
+    </div>
   )
 }
 

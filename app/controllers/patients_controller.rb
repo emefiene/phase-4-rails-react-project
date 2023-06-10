@@ -1,14 +1,14 @@
 class PatientsController < ApplicationController
 
     def index
-        render json: Patient.all
+        render json: Patient.all, status: :ok
 
     end
 
     def create 
   
       @patient = Patient.create(patient_params)
-      render json: @patient
+      render json: @patient, status: :created
     end
 
 

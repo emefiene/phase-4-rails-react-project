@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-       appointment = Appointment.create(appointment_params)
+       appointment = Appointment.create!(appointment_params)
        flowsheet = Flowsheet.create(appointment_id: appointment.id)
        render json: appointment, status: :created
     end

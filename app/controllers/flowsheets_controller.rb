@@ -1,13 +1,13 @@
 class FlowsheetsController < ApplicationController
     
     def index
-       render json: Flowsheet.all
+       render json: Flowsheet.all, status: :ok
 
     end
 
     def show
       @flowsheet = Flowsheet.find(params[:id])
-      render json: @flowsheet
+      render json: @flowsheet, status: :ok
     end
 
     def update
