@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react'
-import {  useParams } from 'react-router-dom'
+import {  useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { currentUserContext } from "./App";
 
@@ -24,6 +24,9 @@ const Flowsheet = () => {
     }
     const [ptFormData, setPtFormData] = useState(initializedPatient)
     const [formData, setFormData] = useState(initializedPhysician)
+    const [errors, setErrors] = useState([])
+
+    const navigate = useNavigate()
 
     const  {id}  = useParams()
     
@@ -57,11 +60,12 @@ const Flowsheet = () => {
         })
         .then(res => {
           if(res.ok){
+            navigate("/appointments")
             res.json().then(console.log)
             // history.push(`/productions/${id}`)
           } else {
             //Display errors
-            // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+            res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
           }
       })
       } else if(currentUser.role_type == "Physician"){
@@ -72,11 +76,12 @@ const Flowsheet = () => {
             })
             .then(res => {
               if(res.ok){
+                navigate("/appointments")
                 res.json().then(console.log)
                 // history.push(`/productions/${id}`)
               } else {
                 //Display errors
-                // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+                res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
               }
             })
           }
@@ -84,6 +89,7 @@ const Flowsheet = () => {
     
         if(currentUser.role_type == "Patient"){
           return (
+            <div>
             <Form onSubmit={handleSubmit}>
                <label>Reason for Visit</label>
                <input type="text" name="reason_for_visit" onChange={handleChange} value={ptFormData.reason_for_visit}></input>
@@ -96,9 +102,12 @@ const Flowsheet = () => {
                
                <input type="submit"/>
             </Form>
+              {errors?errors.map(e => <h2 style={{color:'red'}}>{e.toUpperCase()}</h2>):null}
+            </div>
           )
         } else if(currentUser.role_type == "Physician"){
           return (
+            <div>
             <Form onSubmit={handleSubmit}>
                <label>Blood Pressure</label>
                <input type="text" name="Blood_pressure" onChange={onChange} value={formData.Blood_pressure}></input>
@@ -123,6 +132,8 @@ const Flowsheet = () => {
           
                <input type="submit"/>
             </Form>
+              {errors?errors.map(e => <h2 style={{color:'red'}}>{e.toUpperCase()}</h2>):null}
+            </div>
         )
         }
 }

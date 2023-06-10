@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
 
     def index
-       render json: Appointment.all
+       render json: Appointment.all, status: :ok
     end
 
     def show
@@ -16,7 +16,7 @@ class AppointmentsController < ApplicationController
     end
 
     def update
-      appointment = Appointment.find(params[:id])
+      appointment = Appointment.find!(params[:id])
       appointment.update!(appointment_params)
       render json: p, status: :accepted
    end

@@ -3,13 +3,13 @@ import PatAptCard from './PatAptCard'
 import { currentUserContext } from "./App";
 
 
-const PatAptContainer = ({ deleteAppointment}) => {
+const PatAptContainer = () => {
 
    const currentUser = useContext(currentUserContext);
    const [apptUpcoming, setApptUpcoming] = useState([])
    
    useEffect(() => {
-      fetch(`users/${currentUser.id}/my_appointments`)
+      fetch(`users/${currentUser.id}/upcoming_appointments`)
       .then(res => res.json())
       .then(data => {
         setApptUpcoming(data)
@@ -17,6 +17,8 @@ const PatAptContainer = ({ deleteAppointment}) => {
       })
       
     }, [])
+
+   const deleteAppointment = (id) => setApptUpcoming(current => current.filter(p => p.id !== id)) 
 
   return (
     <div>

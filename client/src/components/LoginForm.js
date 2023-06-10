@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import styled from 'styled-components'
 
 function LoginForm ({updateUser}) {
@@ -9,6 +9,7 @@ function LoginForm ({updateUser}) {
     })
     const [errors, setErrors] = useState([])
     const {username, password} = formData
+    const navigate = useNavigate()
 
     function onSubmit(e){
         e.preventDefault()
@@ -25,8 +26,8 @@ function LoginForm ({updateUser}) {
         .then(res => {
             if(res.ok){
                 res.json().then(updateUser)
-                    // history.push(`/users/${user.id}`)
-                
+                    navigate('/my_profile')
+                    // <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
             }else {
                 res.json().then(json => setErrors(json.errors))
                 // res.json().then(json => setErrors(json.errors))

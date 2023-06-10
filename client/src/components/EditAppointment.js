@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -16,6 +16,7 @@ const EditAppointment = () => {
     })
     const [errors, setErrors] = useState([])
     const [physicianArray, setPhysicianArray] = useState([])
+    const navigate = useNavigate()
 
     const {id} = useParams()
 
@@ -56,6 +57,7 @@ const EditAppointment = () => {
             .then(data => {
             console.log(data)
             // rescheduleAppointment(data)
+              navigate("/appointments")
             console.log("Appointment created successfully!")
             })
             //   history.push(`/productions/${id}`)
@@ -85,7 +87,9 @@ const EditAppointment = () => {
             if(res.ok){
               res.json()
             .then(data => {
-            console.log(data)
+            navigate("/appointments")
+            // console.log(data)
+            // navigate("/appointments")
             // rescheduleAppointment(data)
             console.log("Appointment created successfully!")
             })

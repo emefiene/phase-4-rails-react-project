@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import  { Link, useParams, useHistory } from 'react-router-dom'
+import  { Link, useParams, useNavigate } from 'react-router-dom'
 import { currentUserContext } from "./App";
 
 const PatAptCard = ({apptUpcomingObj:{appointment_complete,flowsheet, id, patient_flowsheet_complete,time},apptUpcomingObj,patient,physician,link1,link2,deleteAppointment}) => {
@@ -7,8 +7,10 @@ const PatAptCard = ({apptUpcomingObj:{appointment_complete,flowsheet, id, patien
    
  const currentUser = useContext(currentUserContext);
  console.log("apptup", apptUpcomingObj)
+ const navigate = useNavigate()
 
- function handleDeleteAppointment(){
+
+ function handleDeleteAppointment(id){
     fetch(`/appointments/${id}`,{
       method:'DELETE',
       headers: {'Content-Type': 'application/json'}
@@ -16,7 +18,7 @@ const PatAptCard = ({apptUpcomingObj:{appointment_complete,flowsheet, id, patien
     .then(res => {
       if(res.ok){
       deleteAppointment(id)
-        // history.push('/')
+        navigate("/")
       }
       // } else {
       //   res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))

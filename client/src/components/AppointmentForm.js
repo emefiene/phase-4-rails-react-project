@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components'
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -15,6 +16,7 @@ const AppointmentForm = () => {
     })
     const [physicianArray, setPhysicianArray] = useState([])
     const [errors, setErrors] = useState([])
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -42,6 +44,7 @@ const AppointmentForm = () => {
             if(res.ok){
               res.json()
             .then(data => {
+              navigate("/appointments")
             console.log(data)
             console.log("Appointment created successfully!")
             })

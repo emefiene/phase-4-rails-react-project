@@ -19,6 +19,7 @@ const SignUpForm = ({updateUser}) => {
      const [experience, setExperience] = useState("")
      const [role, setRole] = useState("")
      const [isLoading, setIsLoading] = useState(false);
+     const [errors, setErrors] = useState([])
 
 
      function handleSubmit (e) {
@@ -97,7 +98,7 @@ const SignUpForm = ({updateUser}) => {
           // history.push("/")
         } else {
           //Display errors
-          // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+          res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
         }
       })
   }
@@ -118,6 +119,7 @@ const SignUpForm = ({updateUser}) => {
     )
   } else if (roleName === "Patient"){
     return (
+      <div>
       <Form onSubmit={handleSubmit}>
          <label>Select Role</label>
          <Select onChange={(e) => setRoleName(e.target.value)} value={ roleName }>
@@ -140,9 +142,12 @@ const SignUpForm = ({updateUser}) => {
          <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} value={ password } />
          <input type="submit" />
       </Form>
+      {errors?errors.map(e => <h2 style={{color:'red'}}>{e.toUpperCase()}</h2>):null}
+      </div>
     )
   }  else if (roleName === "Physician")  {
   return (
+    <div>
        <Form onSubmit={handleSubmit}>
           <label>Select Role</label>
           <Select onChange={(e) => setRoleName(e.target.value)} value={ roleName }>
@@ -171,6 +176,8 @@ const SignUpForm = ({updateUser}) => {
           <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} value={ password } />
           <input type="submit" />
        </Form>
+       {errors?errors.map(e => <h2 style={{color:'red'}}>{e.toUpperCase()}</h2>):null}
+      </div>
     
   )
   }

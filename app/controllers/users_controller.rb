@@ -21,19 +21,19 @@ class UsersController < ApplicationController
     def upcoming_appointments
         user = User.find(params[:id])
         upcoming_appointments = user.role.appointments.select { |apt| apt.appointment_complete == false }
-        render json: upcoming_appointments, status: :ok
+        render json: upcoming_appointments
      end
 
      def completed_appointments
         user = User.find(params[:id])
         completed_appointments = user.role.appointments.select { |apt| apt.appointment_complete == true}
-        render json: completed_appointments, status: :ok
+        render json: completed_appointments
      end
 
      def your_physicians
         user = User.find(params[:id])
         your_physicians = user.role.physicians.uniq
-        render json: your_physicians, status: :ok
+        render json: your_physicians
      end
 
      def your_patients
