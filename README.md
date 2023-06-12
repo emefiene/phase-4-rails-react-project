@@ -107,7 +107,7 @@ nvm install 16
 nvm use 16
 nvm alias default 16
 ```
-
+<!-- 
 You can also update your npm version with:
 
 ```sh
@@ -119,7 +119,7 @@ npm i -g npm
 Render requires that you use PostgreSQL for your database instead of SQLite.
 PostgreSQL (or just Postgres for short) is an advanced database management
 system with more features than SQLite. If you don't already have it installed,
-you'll need to set it up.
+you'll need to set it up. -->
 
 #### PostgreSQL Installation for WSL
 
