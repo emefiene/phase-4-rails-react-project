@@ -10,6 +10,7 @@ function LoginForm ({updateUser}) {
     const [errors, setErrors] = useState([])
     const {username, password} = formData
     const navigate = useNavigate()
+    
 
     function onSubmit(e){
         e.preventDefault()

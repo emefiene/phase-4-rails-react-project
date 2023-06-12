@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     end
     
     def create  
+   byebug
         user = User.create!(params_user)
         if user.valid?
         session[:user_id] = user.id

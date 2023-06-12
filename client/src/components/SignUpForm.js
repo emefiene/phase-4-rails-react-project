@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
@@ -20,6 +21,10 @@ const SignUpForm = ({updateUser}) => {
      const [role, setRole] = useState("")
      const [isLoading, setIsLoading] = useState(false);
      const [errors, setErrors] = useState([])
+
+
+     const navigate = useNavigate()
+    
 
 
      function handleSubmit (e) {
@@ -46,7 +51,7 @@ const SignUpForm = ({updateUser}) => {
             // history.push("/")
           } else {
             //Display errors
-            // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+            res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
           }
         })
       }else if (roleName === "Physician"){
@@ -68,10 +73,10 @@ const SignUpForm = ({updateUser}) => {
         .then(res => {
           if(res.ok){
             res.json().then(res => setRole(res))
-            // history.push("/")
+            navigate('/')
           } else {
             //Display errors
-            // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+            res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
           }
         })
 
@@ -96,11 +101,13 @@ const SignUpForm = ({updateUser}) => {
         if(res.ok){
           res.json().then(data => updateUser(data))
           // history.push("/")
+          setIsLoading(false);
         } else {
           //Display errors
           res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
         }
       })
+      
   }
  
   signUp()
@@ -127,7 +134,7 @@ const SignUpForm = ({updateUser}) => {
            <MenuItem value="Patient">Patient</MenuItem>
          </Select>
          <label>Image</label>
-         <input type="text" name="img_url" onChange={(e) => setImage(e.target.value)} value={ image } />
+         <input type="file" name="img_url" onChange={(e) => setImage(e.target.value)} value={ image } />
          <label>First Name</label>
          <input type="text" name="first_name" onChange={(e) => setFirstName(e.target.value)} value={ firstName } />
          <label>Last Name</label>
@@ -155,7 +162,7 @@ const SignUpForm = ({updateUser}) => {
             <MenuItem value="Patient">Patient</MenuItem>
           </Select>
           <label>Image</label>
-          <input type="text" name="img_url" onChange={(e) => setImage(e.target.value)} value={ image } />
+          <input type="file" name="img_url" onChange={(e) => setImage(e.target.value)} value={ image } />
           <label>First Name</label>
           <input type="text" name="first_name" onChange={(e) => setFirstName(e.target.value)} value={ firstName } />
           <label>Last Name</label>
