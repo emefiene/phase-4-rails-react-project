@@ -1,6 +1,8 @@
 import { useState, useEffect,useContext } from 'react'
 import ApptCompleteCard from "./ApptCompleteCard"
 import { currentUserContext } from "./App";
+import styled from 'styled-components'
+
 
     
 
@@ -20,7 +22,7 @@ const ApptCompleteContainer = () => {
       }, [])
   
     return (
-      <div>
+      <Card style={{ display: "flex"}}>
           {
             apptComplete.map((apptCompleteObj, index) => <ApptCompleteCard
                patient={apptCompleteObj.patient}
@@ -31,7 +33,19 @@ const ApptCompleteContainer = () => {
                key={index}     
             />)
           }
-      </div>
+      </Card>
     )
   }
 export default ApptCompleteContainer
+
+const Card = styled.div`
+
+background-color:Aquamarine;
+  
+overflow-y: auto;
+width: 100%;
+height: 100%;
+min-width: 100%;
+min-height: 100%;
+
+`

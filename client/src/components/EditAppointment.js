@@ -14,6 +14,7 @@ const EditAppointment = () => {
         physician_id:""
         
     })
+
     const [errors, setErrors] = useState([])
     const [physicianArray, setPhysicianArray] = useState([])
     const navigate = useNavigate()
@@ -38,8 +39,6 @@ const EditAppointment = () => {
         .then(physicianDate => setPhysicianArray(physicianDate))
     }, [])
 
-    
-        
       const handleSubmit = (e) => {
         e.preventDefault()
         fetch(`/appointments/${id}`,{
@@ -56,17 +55,11 @@ const EditAppointment = () => {
               res.json()
             .then(data => {
             console.log(data)
-            // rescheduleAppointment(data)
               navigate("/appointments")
-            console.log("Appointment created successfully!")
+            console.log("Appointment updated successfully!")
             })
-            //   history.push(`/productions/${id}`)
-            // console.log(appointment)
-            // console.log("Appointment created successfully!")
             } else {
-              res.json().then(data => console.log(data))
-              //Display errors
-            //   res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+              res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
             }
           })
 
@@ -88,24 +81,16 @@ const EditAppointment = () => {
               res.json()
             .then(data => {
             navigate("/appointments")
-            // console.log(data)
-            // navigate("/appointments")
-            // rescheduleAppointment(data)
+             console.log(data)
             console.log("Appointment created successfully!")
             })
-            //   history.push(`/productions/${id}`)
-            // console.log(appointment)
-            // console.log("Appointment created successfully!")
             } else {
-              //Display errors
-              res.json().then(data => console.log(data))
-              // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+              res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
             }
           })
 
     }
     
-
     if(currentUser.role_type == "Patient"){
       return (
         <div>

@@ -35,12 +35,11 @@ function App() {
   
   const updateUser = (user) => setCurrentUser(user)
 
-  // const deleteAppointment = (id) => setAppointmentData(current => current.filter(p => p.id !== id)) 
   
   if (!currentUser) return <Login updateUser={updateUser} />;
 
   return (
-    <div className="App">
+    <div style={{ marginLeft: "5px", marginRight: "5px"}} className="App">
       <currentUserContext.Provider value={currentUser}>
       <Navbar setCurrentUser={setCurrentUser} />
       <Routes>
@@ -53,10 +52,9 @@ function App() {
       <Route path="/my_physicians" element={<MyPhysicianContainer /> } />
       <Route path="/my_profile" element={<MyProfile  /> } />
       <Route path="/appointment-edit/:id" element={<EditAppointment  /> } />
-      <Route path="/footer" element={ <Footer/> } />
-      
       </Routes>
       </currentUserContext.Provider>
+      <Footer />
     </div>
   );
 }

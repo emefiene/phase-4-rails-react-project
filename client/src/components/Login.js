@@ -8,13 +8,18 @@ const Login = ({updateUser}) => {
     const [login, setLogin] = useState(true);
 
   return (
+    <div>
+    <Head>
+      <h1 style={{textAlign: "center"}}>My Medcal App</h1>
+     </Head>
     <Wrapper>
-       <h3> have some pt</h3>
+       <h1 style={{ color: "blue"}}> Welcome to My Medical-App! Please login;</h1>
+       
        {login? (
         <div>
           <LoginForm updateUser={updateUser} />
         
-        <p> 
+        <p style={{ color: "blue"}}> 
            Don't have an account? &nbsp;
            <button onClick={() => setLogin(false)}> Sign Up </button>
         </p>
@@ -31,6 +36,7 @@ const Login = ({updateUser}) => {
         
        )}
     </Wrapper>
+    </div>
   )
 }
 
@@ -40,3 +46,14 @@ const Wrapper = styled.section`
   margin: 40px auto;
   padding: 16px;
 `;
+const Head = styled.div`
+.img{
+  width: 1500px;
+  height: 500px;
+  padding: 15px;
+  marging: 2000px ;
+  margin-left: 120px;
+  
+ }
+
+`

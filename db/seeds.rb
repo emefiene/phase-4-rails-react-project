@@ -10,24 +10,24 @@ p1 = Physician.create(
     first_name: "Pius",
     last_name: "Emefiene",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71XupDMDoCL._AC_UY695_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C5603AQF_b6Um8KJCrA/profile-displayphoto-shrink_400_400/0/1661237685903?e=1685577600&v=beta&t=5uvslq40-HQBxprsfiA9MdCRJliV0lllxcMG4OgOQiA",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 15,
-    rating: 5
+    years_of_experience: 15
+ 
 )
 
 p2 = Physician.create(
     first_name: "Alexander",
     last_name: "Great",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61liL3F0mCS._AC_UY879_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C5603AQF_b6Um8KJCrA/profile-displayphoto-shrink_100_100/0/1661237685903?e=1685577600&v=beta&t=wmYYFE5UCj5KWbNMzCurR_7H_Y9RZaE7gm0gzygsvdo",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 8,
-    rating: 5
+    years_of_experience: 8
+ 
 
 )
 
@@ -35,24 +35,24 @@ p3 = Physician.create(
     first_name: "Naomi",
     last_name: "Best",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51iFtRKei3L._AC_UY695_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C5603AQH_LQJixpUxwg/profile-displayphoto-shrink_100_100/0/1545089788339?e=1685577600&v=beta&t=9wwPOoq6eMB49Vg8XH6490fubrNUqCZewuwXGKrAef0",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 8,
-    rating: 5
+    years_of_experience: 8
+
 )
 
 p4 = Physician.create(
     first_name: "Mary",
     last_name: "Alright",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/814rpp-AYUL._AC_UX679_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C4D03AQEBh-y-sFABow/profile-displayphoto-shrink_400_400/0/1549083175330?e=1685577600&v=beta&t=5w82H1qWuyjwTVVJsJVrAyorFUeW3Gpvvp3tn1nR2Sc",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 7,
-    rating: 3.5
+    years_of_experience: 7
+
 
 )
 
@@ -60,24 +60,24 @@ p5 = Physician.create(
     first_name: "Hilary",
     last_name: "Cliff",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C9103XLI8aML.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX679_.png",
+    img_url: "https://media.licdn.com/dms/image/D5603AQGCdGFG-PYAiQ/profile-displayphoto-shrink_400_400/0/1678302319271?e=1685577600&v=beta&t=QZgHRSnimmeU6g7x8nqtAoteAHn4qXLoGLhX1JpBfLE",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 11,
-    rating: 3
+    years_of_experience: 11
+
 )
 
 p6 = Physician.create(
     first_name: "Rock",
     last_name: "Smarth",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51NWBzF4hCL._AC_UX679_.jpg",
+    img_url: "https://media.licdn.com/dms/image/D5603AQGCdGFG-PYAiQ/profile-displayphoto-shrink_400_400/0/1678302319271?e=1685577600&v=beta&t=QZgHRSnimmeU6g7x8nqtAoteAHn4qXLoGLhX1JpBfLE",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 4,
-    rating: 3
+    years_of_experience: 4
+
 
 )
 
@@ -85,24 +85,23 @@ p7 = Physician.create(
     first_name: "Paul",
     last_name: "Love",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71T6ajSCg5L._AC_SX679_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C4D03AQER2I-M5MlSrg/profile-displayphoto-shrink_400_400/0/1517393645204?e=1685577600&v=beta&t=UZR5EzV7T03eTT-mZLM590bDA-1OJAkDfvPo_eMW400",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 25,
-    rating: 5
+    years_of_experience: 25
+ 
 )
-
 p8 = Physician.create(
     first_name: "Mike",
     last_name: "Felix",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/616SvseuApL._AC_SL1024_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C4D03AQER2I-M5MlSrg/profile-displayphoto-shrink_400_400/0/1517393645204?e=1685577600&v=beta&t=UZR5EzV7T03eTT-mZLM590bDA-1OJAkDfvPo_eMW400",
     bio: "Bachelor in Nursing Nigeria, Havard Medical school USA, distinction candidate",
     city: "Arlington",
     specialty: "Internal Medicine",
-    years_of_experience: 20,
-    rating: 4.5
+    years_of_experience: 20
+  
 
 )
 
@@ -111,7 +110,7 @@ pt1 = Patient.create(
     first_name: "Pius",
     last_name: "Emefiene",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71XupDMDoCL._AC_UY695_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C4D03AQER2I-M5MlSrg/profile-displayphoto-shrink_400_400/0/1517393645204?e=1685577600&v=beta&t=UZR5EzV7T03eTT-mZLM590bDA-1OJAkDfvPo_eMW400",
     date_of_birth: "03/18/1970"
 
 )
@@ -120,7 +119,7 @@ pt2 = Patient.create(
     first_name: "Chidex",
     last_name: "Vibes",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71XupDMDoCL._AC_UY695_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C4D03AQER2I-M5MlSrg/profile-displayphoto-shrink_400_400/0/1517393645204?e=1685577600&v=beta&t=UZR5EzV7T03eTT-mZLM590bDA-1OJAkDfvPo_eMW400",
     date_of_birth: "06/3/1990"
 )
 
@@ -128,7 +127,7 @@ pt3 = Patient.create(
     first_name: "Stephanie",
     last_name: "Johnson",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61liL3F0mCS._AC_UY879_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C4D03AQER2I-M5MlSrg/profile-displayphoto-shrink_400_400/0/1517393645204?e=1685577600&v=beta&t=UZR5EzV7T03eTT-mZLM590bDA-1OJAkDfvPo_eMW400",
     date_of_birth: "09/3/1960"
 )
 
@@ -136,7 +135,7 @@ pt4 = Patient.create(
     first_name: "Linda",
     last_name: "Best",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51iFtRKei3L._AC_UY695_.jpg",
+    img_url: "https://media.licdn.com/dms/image/D5603AQGCdGFG-PYAiQ/profile-displayphoto-shrink_400_400/0/1678302319271?e=1685577600&v=beta&t=QZgHRSnimmeU6g7x8nqtAoteAHn4qXLoGLhX1JpBfLE",
     date_of_birth: "08/12/1978"
 )
 
@@ -144,7 +143,7 @@ pt5 = Patient.create(
     first_name: "Mary",
     last_name: "Alright",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/814rpp-AYUL._AC_UX679_.jpg",
+    img_url: "https://media.licdn.com/dms/image/D5603AQGCdGFG-PYAiQ/profile-displayphoto-shrink_400_400/0/1678302319271?e=1685577600&v=beta&t=QZgHRSnimmeU6g7x8nqtAoteAHn4qXLoGLhX1JpBfLE",
     date_of_birth: "04/13/2000"
 
 )
@@ -153,7 +152,7 @@ pt6 = Patient.create(
     first_name: "Hilary",
     last_name: "Cliff",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C9103XLI8aML.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX679_.png",
+    img_url:"https://media.licdn.com/dms/image/D5603AQGCdGFG-PYAiQ/profile-displayphoto-shrink_400_400/0/1678302319271?e=1685577600&v=beta&t=QZgHRSnimmeU6g7x8nqtAoteAHn4qXLoGLhX1JpBfLE",
     date_of_birth: "01/12/1987"
 )
 
@@ -161,7 +160,7 @@ pt7 = Patient.create(
     first_name: "Rock",
     last_name: "Smarth",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51NWBzF4hCL._AC_UX679_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C5603AQF_b6Um8KJCrA/profile-displayphoto-shrink_400_400/0/1661237685903?e=1685577600&v=beta&t=5uvslq40-HQBxprsfiA9MdCRJliV0lllxcMG4OgOQiA",
     date_of_birth: "03/22/1949"
 
 )
@@ -170,7 +169,7 @@ pt8 = Patient.create(
     first_name: "Paul",
     last_name: "Love",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71T6ajSCg5L._AC_SX679_.jpg",
+    img_url:"https://media.licdn.com/dms/image/C5603AQF_b6Um8KJCrA/profile-displayphoto-shrink_400_400/0/1661237685903?e=1685577600&v=beta&t=5uvslq40-HQBxprsfiA9MdCRJliV0lllxcMG4OgOQiA",
     date_of_birth: "11/12/1985"
 )
 
@@ -178,7 +177,7 @@ pt9 = Patient.create(
     first_name: "Mike",
     last_name: "Felix",
     phone_number: "(817) 222-3333",
-    img_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/616SvseuApL._AC_SL1024_.jpg",
+    img_url: "https://media.licdn.com/dms/image/C5603AQF_b6Um8KJCrA/profile-displayphoto-shrink_400_400/0/1661237685903?e=1685577600&v=beta&t=5uvslq40-HQBxprsfiA9MdCRJliV0lllxcMG4OgOQiA",
     date_of_birth: "03/15/1990"
 )
 

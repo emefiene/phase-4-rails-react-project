@@ -27,10 +27,8 @@ function LoginForm ({updateUser}) {
             if(res.ok){
                 res.json().then(updateUser)
                     navigate('/my_profile')
-                    // <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
             }else {
                 res.json().then(json => setErrors(json.errors))
-                // res.json().then(json => setErrors(json.errors))
             }
         })
        

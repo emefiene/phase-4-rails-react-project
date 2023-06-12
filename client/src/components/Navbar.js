@@ -22,7 +22,26 @@ const Navbar = ({setCurrentUser}) => {
   
   return (
     <Nav>
-    <NavH1>Phase-4-Project-Rails-React</NavH1>
+    <NavH1>My Medical-App</NavH1>
+    {currentUser.role_type == "Patient"?(
+      <Head>
+      <li><Link to="/"><h4>Home</h4></Link></li>
+      <li><Link to="/appointment_new"><h4>Schedule Appointment</h4></Link></li>
+      <li><Link to="/appointments"><h4>Upcoming Appointment</h4></Link></li>
+      <li><Link to="/appointment_complete"><h4>Patient History </h4></Link></li>
+      <li><Link to="/my_physicians"><h4> My Physicians </h4></Link></li>
+      <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
+      </Head>
+    ):(
+      <Head>
+      <li><Link to="/"><h4>Home</h4></Link></li>
+      <li><Link to="/appointments"><h4>Upcoming Appointment</h4></Link></li>
+      <li><Link to="/appointment_complete"><h4> Patient History </h4></Link></li>
+      <li><Link to="/my_patients"><h4> My Patients </h4></Link></li>
+      <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
+      </Head>
+    )}
+
     <Menu>
       <button onClick={handleLogOut}>Log Out</button>
       {!menu?
@@ -35,21 +54,16 @@ const Navbar = ({setCurrentUser}) => {
       <div>
       <li><Link to="/"><h2>Home</h2></Link></li>
       <li><Link to="/appointment_new"><h4>Schedule Appointment</h4></Link></li>
-      <li><Link to="/footer"><h2>Footer</h2></Link></li>
-      <li><Link to="/flowsheet"><h4>Complete Flowsheet</h4></Link></li>
-      <li><Link to="/appointments"><h4>Your Appointment</h4></Link></li>
-      <li><Link to="/appointment_complete"><h4> Appointment Complete </h4></Link></li>
+      <li><Link to="/appointments"><h4>Upcoming Appointment</h4></Link></li>
+      <li><Link to="/appointment_complete"><h4>Patient History </h4></Link></li>
       <li><Link to="/my_physicians"><h4> My Physicians </h4></Link></li>
       <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
       </div>
     ):(
       <div>
       <li><Link to="/"><h2>Home</h2></Link></li>
-      <li><Link to="/appointment_new"><h4>Schedule Appointment</h4></Link></li>
-      <li><Link to="/footer"><h2>Footer</h2></Link></li>
-      <li><Link to="/flowsheet"><h4>Complete Flowsheet</h4></Link></li>
-      <li><Link to="/appointments"><h4>Your Appointment</h4></Link></li>
-      <li><Link to="/appointment_complete"><h4> Appointment Complete </h4></Link></li>
+      <li><Link to="/appointments"><h4>Upcoming Appointment</h4></Link></li>
+      <li><Link to="/appointment_complete"><h4> Patient History </h4></Link></li>
       <li><Link to="/my_patients"><h4> My Patients </h4></Link></li>
       <li><Link to="/my_profile"><h4> My Proflie </h4></Link></li>
       </div>
@@ -78,17 +92,31 @@ const Menu = styled.div`
   display: flex;
   padding: 0.01%
   align-items: center;
-  a{
+  li{
     text-decoration: none;
     color:black;
     font-family:Arial;
   }
-  a:hover{
+  li:hover{
     color:blue
   }
-  ul{
+  li{
     list-style:none;
   }
   
 `;
+
+const Head = styled.div`
+  
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  background-color:#B6C8A9;
+   li{
+
+     paddingg-left: 2em;
+     padding-right: 2em
+   }
+
+`
 

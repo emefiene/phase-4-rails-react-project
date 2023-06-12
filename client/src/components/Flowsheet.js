@@ -62,9 +62,7 @@ const Flowsheet = () => {
           if(res.ok){
             navigate("/appointments")
             res.json().then(console.log)
-            // history.push(`/productions/${id}`)
           } else {
-            //Display errors
             res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
           }
       })
@@ -78,9 +76,7 @@ const Flowsheet = () => {
               if(res.ok){
                 navigate("/appointments")
                 res.json().then(console.log)
-                // history.push(`/productions/${id}`)
               } else {
-                //Display errors
                 res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
               }
             })
@@ -128,7 +124,7 @@ const Flowsheet = () => {
                <input type="text" name="bmi" onChange={onChange} value={formData.bmi}></input>
              
                <label>Doctor Note</label>
-               <input type="text" name="doctor_notes" onChange={onChange} value={formData.doctor_notes}></input>
+               <textarea className='input' name = "doctor_notes" aria-label='comments' value={formData.doctor_notes} onChange={onChange} ></textarea>
           
                <input type="submit"/>
             </Form>
@@ -154,4 +150,6 @@ input[type=submit]{
   margin-top:10px;
   margin-bottom:10px;
 }
+
+
 `

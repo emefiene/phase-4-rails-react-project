@@ -48,12 +48,7 @@ const AppointmentForm = () => {
             console.log(data)
             console.log("Appointment created successfully!")
             })
-            //   history.push(`/productions/${id}`)
-            // console.log(appointment)
-            // console.log("Appointment created successfully!")
             } else {
-              //Display errors
-              // res.json().then(data => console.log(data))
               res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
             }
           })
@@ -71,6 +66,7 @@ const AppointmentForm = () => {
           }
         </Select>   
       <label>Time</label>
+      <input className='time' type="datetime-local" name = "time" aria-label='date' onChange={handleChange} value={formData.time} ></input>
         <input type="text" name="time" onChange={handleChange} value={formData.time} />
         <input type="submit" />
     </Form>

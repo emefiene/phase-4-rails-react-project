@@ -9,7 +9,6 @@ class CreatePhysicians < ActiveRecord::Migration[6.1]
       t.string :city
       t.string :specialty
       t.integer :years_of_experience
-      t.float :rating
 
       t.timestamps
     end

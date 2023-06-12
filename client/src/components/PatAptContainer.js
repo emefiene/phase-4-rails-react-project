@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import PatAptCard from './PatAptCard'
 import { currentUserContext } from "./App";
+import styled from "styled-components"
 
 
 const PatAptContainer = () => {
@@ -21,7 +22,7 @@ const PatAptContainer = () => {
    const deleteAppointment = (id) => setApptUpcoming(current => current.filter(p => p.id !== id)) 
 
   return (
-    <div>
+    <Card>
         {
           apptUpcoming.map((apptUpcomingObj, index) => <PatAptCard
              patient={apptUpcomingObj.patient}
@@ -34,8 +35,19 @@ const PatAptContainer = () => {
              key={index}     
           />)
         }
-    </div>
+    </Card>
   )
 }
 
 export default PatAptContainer
+const Card = styled.div`
+
+background-color:Aquamarine;
+  
+overflow-y: auto;
+width: 100%;
+height: 100%;
+min-width: 100%;
+min-height: 100%;
+
+`

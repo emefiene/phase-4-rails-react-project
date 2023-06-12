@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import MyPatientCard from './MyPatientCard'
 import { currentUserContext } from "./App";
+import styled from 'styled-components'
 
 
 const MyPatientContainer = () => {
@@ -20,7 +21,7 @@ const MyPatientContainer = () => {
     }, [])
    
   return (
-    <div>
+    <Card style={{ display: "flex"}}>
         {
           myPatient.map((myPatientObj, index) => <MyPatientCard
              myPatientObj={myPatientObj}
@@ -28,8 +29,19 @@ const MyPatientContainer = () => {
              key={index}     
           />)
         }
-    </div>
+    </Card>
   )
 }
 
 export default MyPatientContainer
+const Card = styled.div`
+
+background-color:Aquamarine;
+  
+overflow-y: auto;
+width: 100%;
+height: 100%;
+min-width: 100%;
+min-height: 100%;
+
+`
