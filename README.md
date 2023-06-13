@@ -24,7 +24,106 @@ See Environment Setup below for instructions on installing these tools if you
 don't already have them.
 
 ## Setup
-z
+
+Start by **cloning** (not forking) the project template repository and removing
+the remote:
+
+```console
+$ git clone git@github.com:learn-co-curriculum/project-template-react-rails-api.git your-project-name
+$ cd your-project-name
+$ git remote rm origin
+```
+
+Then, [create a new remote repository][create repo] on GitHub. Head to
+[github.com](https://github.com) and click the **+** icon in the top-right
+corner and follow the steps to create a new repository. **Important**: don't
+check any of the options such as 'Add a README file', 'Add a .gitignore file',
+etc. — since you're importing an existing repository, creating any of those
+files on GitHub will cause issues.
+
+[create repo]: https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line#adding-a-project-to-github-without-github-cli
+
+If you're working with a partner,
+[add them as a collaborator][add collaborator] on GitHub. From your repo on
+GitHub, go to Settings > Manage Access > Invite a collaborator and enter your
+partner's username. Once your partner has access, they should git **clone** (not
+fork) the repository.
+
+[add collaborator]: https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository
+
+Finally, connect the GitHub remote repository to your local repository and push
+up your code:
+
+```console
+$ git remote add origin git@github.com:your-username/your-project-name.git
+$ git push -u origin main
+```
+
+When you're ready to start building your project, run:
+
+```sh
+bundle install
+rails db:create
+npm install --prefix client
+```
+
+You can use the following commands to run the application:
+
+- `rails s`: run the backend on [http://localhost:3000](http://localhost:3000)
+- `npm start --prefix client`: run the frontend on
+  [http://localhost:4000](http://localhost:4000)
+
+Make sure to also update this README to include documentation about
+your project. Here's a list of some [awesome readmes][] for inspiration.
+
+[awesome readmes]: https://github.com/matiassingers/awesome-readme
+
+## Deploying
+
+This application has all the starter code needed to help you deploy your
+application to Render. It's recommended to deploy your project early and push up
+changes often to ensure that your code works equally well in production and
+development environments.
+
+The instructions in this section assume that you've already set up a Render
+account, created a PostgreSQL instance in your account, and set up your
+environment to deploy to Render. If you have not yet completed these steps, see
+the Environment Setup section below.
+
+### Create a Master Key File
+
+In the project files, delete the `config/credentials.yml.enc` file. Then, in the
+terminal, run the following:
+
+```sh
+$ EDITOR="code --wait" bin/rails credentials:edit
+```
+
+**Note**: if you use a different text editor than VS Code, you will need to replace
+`code` with the appropriate command.
+
+The command above will open a file in VS Code and wait for you to close it
+before completing the process of creating the credential files. Once you've done
+that, you should see both the `credentials.yml.enc` and `master.key` files in
+the `config` folder. You will need the value in the `master.key` file to set up
+the web service in Render.
+
+Commit your changes and push them to GitHub.
+
+### Create the App Database
+
+Render allows users to create [multiple databases within a single PostgreSQL
+instance][multiple dbs] using the PostgreSQL interactive terminal,
+[`psql`][psql].
+
+Navigate to your PostgreSQL instance from the Render dashboard, click the
+"Connect" dropdown, then the External Connection tab, and copy the PSQL command.
+Paste it into your terminal and press enter. This command connects you to the
+remote PostgreSQL instance.
+
+To create the database, run this SQL command:
+
+```sql
 CREATE DATABASE new_db_name;
 ```
 
@@ -107,7 +206,7 @@ nvm install 16
 nvm use 16
 nvm alias default 16
 ```
-<!-- 
+
 You can also update your npm version with:
 
 ```sh
@@ -119,7 +218,7 @@ npm i -g npm
 Render requires that you use PostgreSQL for your database instead of SQLite.
 PostgreSQL (or just Postgres for short) is an advanced database management
 system with more features than SQLite. If you don't already have it installed,
-you'll need to set it up. -->
+you'll need to set it up.
 
 #### PostgreSQL Installation for WSL
 
