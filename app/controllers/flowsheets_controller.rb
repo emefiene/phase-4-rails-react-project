@@ -1,5 +1,7 @@
 class FlowsheetsController < ApplicationController
     
+  skip_before_action :authorized_user, only: [:index, :show]
+
     def index
        render json: Flowsheet.all, status: :ok
 

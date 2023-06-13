@@ -104,7 +104,7 @@ const SignUpForm = ({updateUser}) => {
           setIsLoading(false);
         } else {
           //Display errors
-          res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+          // res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
         }
       })
       
@@ -146,7 +146,7 @@ const SignUpForm = ({updateUser}) => {
          <label>Username</label>
          <input type="text" name="username" onChange={(e) => setUsername(e.target.value)} value={ username } />
          <label>Password</label>
-         <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} value={ password } />
+         <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} value={ password } />
          <input type="submit" />
       </Form>
       {errors?errors.map(e => <h2 style={{color:'red'}}>{e.toUpperCase()}</h2>):null}
@@ -180,7 +180,7 @@ const SignUpForm = ({updateUser}) => {
           <label>Username</label>
           <input type="text" name="username" onChange={(e) => setUsername(e.target.value)} value={ username } />
           <label>Password</label>
-          <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} value={ password } />
+          <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} value={ password } />
           <input type="submit" />
        </Form>
        {errors?errors.map(e => <h2 style={{color:'red'}}>{e.toUpperCase()}</h2>):null}
