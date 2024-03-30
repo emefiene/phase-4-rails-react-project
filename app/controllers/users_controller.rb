@@ -38,11 +38,11 @@ class UsersController < ApplicationController
         render json: your_physicians
      end
 
-    #  def your_patients
-    #     user = User.find(params[:id])
-    #     your_patients = user.role.patients.uniq
-    #     render json: your_patients, status: :ok
-    #  end
+     def your_patients
+        user = User.find(params[:id])
+        your_patients = user.role.patients.uniq
+        render json: your_patients, status: :ok
+     end
 
      private
 
